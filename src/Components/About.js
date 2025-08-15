@@ -4,11 +4,12 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBirthdayCake, FaGraduationCap
 import AOS from 'aos';
 import React, { useEffect } from 'react';
 
+
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
-  
+
 
   return (
     <section id="about" className="about-section">
@@ -56,39 +57,61 @@ const About = () => {
               </p>
             </div>
           </div>
-
+          
           {/* Education Timeline */}
           <div className="timeline-container mt-5">
             <h2 className="text-center text-primary mb-5">🎓 Education</h2>
+
             <div className="timeline">
+              {/* BE */}
               <div className="timeline-item left" data-aos="fade-right">
-                <div className="timeline-dots"></div>
+                <div className="timeline-icons">
+                  <img src="/college.react.jpeg" alt="logo" />
+                </div>
                 <div className="timeline-card">
                   <h5>B.E. in Mechanical Engineering</h5>
-                  <p>Sri Ramakrishna Engineering College</p>
+                  <p className="text-muted">Sri Ramakrishna Engineering College, Coimbatore</p>
+                  <small className="fw-bold">2019 – 2023</small>
+                  <p className="mt-2">
+                    Grade: <strong>7.69 CGPA</strong><br />
+                    Completed B.E. in Mechanical Engineering with a strong foundation in problem-solving, analytical thinking, and practical applications of engineering principles.
+                  </p>
                 </div>
-                <div className="timeline-date">2019 - 2023</div>
               </div>
 
+              {/* SSLC */}
               <div className="timeline-item right" data-aos="fade-left">
-                <div className="timeline-dot"></div>
+                <div className="timeline-icon">
+                  <img src="/school.react.jpg" alt="logo" />
+                </div>
                 <div className="timeline-card">
                   <h5>Higher Secondary Certificate (HSC)</h5>
-                  <p>GRG Matric Higher Secondary School</p>
+                  <p className="text-muted">GRG Matric Higher Secondary School</p>
+                  <small className="fw-bold">2018 – 2019</small>
+                  <p className="mt-2">
+                    Completed Higher Secondary with a focus on Mathematics, Physics, Chemistry and Computer Science.
+                  </p>
                 </div>
-                <div className="timeline-date">2018 - 2019</div>
               </div>
 
+              {/* HSC */}
               <div className="timeline-item left" data-aos="fade-right">
-                <div className="timeline-dots"></div>
+                <div className="timeline-icons">
+                  <img src="/school.react.jpg" alt="logo" />
+                </div>
                 <div className="timeline-card">
                   <h5>Secondary School Leaving Certificate (SSLC)</h5>
-                  <p>GRG Matric Higher Secondary School</p>
+                  <p className="text-muted">GRG Matric Higher Secondary School</p>
+                  <small className="fw-bold">2016 – 2017</small>
+                  <p className="mt-2">
+                    Completed SSLC with a focus on Mathematics, Science and Social.
+                  </p>
                 </div>
-                <div className="timeline-date">2016 - 2017</div>
               </div>
             </div>
           </div>
+
+
 
         </div>
       </div>

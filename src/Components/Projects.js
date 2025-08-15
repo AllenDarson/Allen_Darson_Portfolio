@@ -13,6 +13,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-5 projects-section">
       <div className="container">
+         <div className="about-wrapper">
         <h2 className="projects-section-title fw-bold display-4 text-center">Projects</h2>
         <h5 className="text-center fw-normal fst-italic mb-4">A collection of projects I've worked on.</h5>
         <div className="underline mx-auto mb-5"></div>
@@ -57,7 +58,7 @@ const Projects = () => {
               <div className="card-body d-flex flex-column">
                 <h4 className="card-title">Personal Portfolio</h4>
                 <p className="card-text">
-                  A clean portfolio built with HTML, CSS, JavaScript, and Flask to showcase my work and skills.
+                  A clean portfolio built with React.js, CSS and React Bootstrap to showcase my work and skills.
                 </p>
                 <div className="text-center mt-auto">
                   <Button href="https://github.com/AllenDarson/Portfolio" target="_blank" variant="success">Explore</Button>
@@ -69,13 +70,14 @@ const Projects = () => {
 
         <div className="text-center mt-5">
           <a
-            href="https://github.com/AllenDarson"
+            href="https://github.com/AllenDarson/Allen_Darson_Portfolio"
             className="btn btn-primary github-btn"
             target="_blank"
             rel="noreferrer"
           >
             🔍 View More Projects on GitHub
           </a>
+        </div>
         </div>
       </div>
     </section>
