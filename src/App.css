@@ -196,6 +196,16 @@ html, body {
   70%  { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;   /* smaller text on mobile */
+    white-space: nowrap; /* keep text in one line */
+  }
+  .navbar-toggler {
+    margin-left: auto; /* push toggler to far right */
+  }
+}
+
 
 
 /* About Section */
@@ -643,6 +653,16 @@ html, body {
 .theme-toggle-btn:hover {
   background-color: #0056d2;
   transform: scale(1.05);
+}
+/* === Mobile View (max width 768px) === */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    bottom: 20px;   /* Move it slightly up */
+    right: 20px;    /* Move it slightly left */
+    width: 45px;    /* Smaller size */
+    height: 45px;
+    font-size: 20px; /* Smaller icon size */
+  }
 }
 
 /* === LIGHT MODE STYLING === */
