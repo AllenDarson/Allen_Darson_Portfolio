@@ -657,11 +657,11 @@ html, body {
 /* === Mobile View (max width 768px) === */
 @media (max-width: 768px) {
   .theme-toggle-btn {
-    bottom: 20px;   /* Move it slightly up */
-    right: 20px;    /* Move it slightly left */
-    width: 45px;    /* Smaller size */
+    bottom: 15px;   /* move up slightly */
+    right: 15px;    /* move away from screen edge */
+    width: 45px;    /* smaller size for mobile */
     height: 45px;
-    font-size: 20px; /* Smaller icon size */
+    font-size: 20px;
   }
 }
 
