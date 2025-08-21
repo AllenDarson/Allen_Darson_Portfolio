@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" data-aos="fade-down">
+      <nav className="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" data-aos="fade-down">
         <div className="container">
           <a className="navbar-brand fw-bold fs-4" href="#home">
             <PiHandPeaceDuotone /> Allen Darson C
