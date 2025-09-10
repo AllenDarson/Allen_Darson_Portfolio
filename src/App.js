@@ -1,26 +1,3 @@
-// import './App.css';
-// import Basic from './Components/Basic';
-// import Home from './Components/Home';
-// import About from './Components/About';
-// import Skills from './Components/Skills';
-// import Projects from './Components/Projects';
-// import Contact from './Components/Contact';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Basic />
-//       <Home />
-//       <About />
-//       <Skills />
-//       <Projects />
-//       <Contact />
-//     </div>
-//   );
-// }
-
-// export default App;
-// 
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -63,9 +40,9 @@ function App() {
   return (
     <div>
       {/* Pass darkMode and toggle function to Home */}
-      <button className="theme-toggle-btn" onClick={toggleDarkMode} title="Toggle theme">
+      {/* <button className="theme-toggle-btn" onClick={toggleDarkMode} title="Toggle theme">
         {darkMode ? '🌙' : '☀️'}
-      </button>
+      </button> */}
       <Home />
       <About />
       <Skills />

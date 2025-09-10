@@ -35,7 +35,7 @@ const About = () => {
             <div className="col-md-8" data-aos="fade-left">
               <h4 className="fw-bold mb-3 text-primary">I'm Allen Darson C</h4>
               <p>
-                👋 I'm a <strong>2023 graduate</strong> passionate about full-stack and SQL development.<br />
+                👋 I'm a <strong>2023 graduate</strong> passionate about python, full-stack and SQL development.<br />
                 I build modern web apps using <strong>Python, Django, Flask, SQL, HTML, CSS, Bootstrap, JavaScript, and React</strong>.
               </p>
               <div className="row mt-4">
@@ -63,6 +63,21 @@ const About = () => {
             <h2 className="text-center text-primary mb-5">🎓 Education</h2>
 
             <div className="timeline">
+               {/* Institute Course */}
+               <div className="timeline-item right" data-aos="fade-left">
+                <div className="timeline-icon">
+                  <img src="/ipcs-global-icon.jpg" alt="logo" />
+                </div>
+                <div className="timeline-card">
+                  <h5>Advance Fullstack Developer (Python) Course</h5>
+                  <p className="text-muted">IPCS Global Coimbatore</p>
+                  <small className="fw-bold">2024 – 2025</small>
+                  <p className="mt-2">
+                    Completed hands-on training in Python, Fullstack development, and related technologies.
+                  </p>
+                </div>
+              </div>
+
               {/* BE */}
               <div className="timeline-item left" data-aos="fade-right">
                 <div className="timeline-icons">
@@ -108,6 +123,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -119,3 +135,7 @@ const About = () => {
   );
 };
 export default About;
+
+
+
+

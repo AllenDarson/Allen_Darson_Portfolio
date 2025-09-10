@@ -16,6 +16,14 @@ import { LiaFileDownloadSolid } from 'react-icons/lia';
 
 
 const Home = () => {
+  
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
+
+  useEffect(() => {
+    document.body.classList.toggle('light-mode', !darkMode);
+  }, [darkMode]);
 
   useEffect(() => {
     AOS.init({ duration: 1200 });
@@ -24,25 +32,39 @@ const Home = () => {
   return (
     <div>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
-        <div className="container">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+        <div className="container d-flex align-items-center justify-content-between">
+
+          {/* Brand */}
           <a className="navbar-brand fw-bold fs-4" href="#home">
-            <PiHandPeaceDuotone /> Allen Darson C
+            <PiHandPeaceDuotone />Allen Darson C
           </a>
 
-          {/* FIXED TOGGLER BUTTON */}
-          <button
-            className="navbar-toggler ms-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <div className="d-flex align-items-center d-lg-none">
+            {/* Theme Toggle Button (mobile only) */}
+            <button
+              className="theme-toggle-icon me-2"
+              onClick={toggleDarkMode}
+              title="Toggle theme"
+            >
+              {darkMode ? '🌙' : '☀️'}
+            </button>
 
+            {/* Toggler Button */}
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          {/* Nav Links */}
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item mx-2"><a className="nav-link" href="#home"><AiOutlineHome /> Home</a></li>
@@ -51,6 +73,15 @@ const Home = () => {
               <li className="nav-item mx-2"><a className="nav-link" href="#projects"><FaListCheck /> Projects</a></li>
               <li className="nav-item mx-2"><a className="nav-link" href="#contact"><FaPaperPlane /> Contact</a></li>
             </ul>
+
+            {/* Theme Toggle (desktop only) */}
+            <button
+              className="theme-toggle-icon ms-lg-3 d-none d-lg-inline-block"
+              onClick={toggleDarkMode}
+              title="Toggle theme"
+            >
+              {darkMode ? '🌙' : '☀️'}
+            </button>
           </div>
         </div>
       </nav>
@@ -64,12 +95,13 @@ const Home = () => {
                 <span className="wave">👋🏻</span> <span>Hi, I'm <span className="highlight">Allen Darson</span></span>
               </h1>
               <p className="lead mb-4">
-                A passionate <strong>Fullstack Developer</strong> and <strong>SQL Developer</strong> skilled in Python, SQL, Django, Flask, and React.
+                A passionate <strong>Python Developer</strong>, <strong>Fullstack Developer</strong>, and <strong>SQL Developer</strong> skilled in Python, SQL, Django, Flask, and React.
               </p>
+
 
               <motion.a
                 href={resumeFile}
-                download="myResume"
+                download="Allen_Dason_Resume_Wipro"
                 whileHover={{ scale: 1.05 }}
                 className="btn btn-dark me-3"
               >
