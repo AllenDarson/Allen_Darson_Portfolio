@@ -35,7 +35,7 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="container py-5">
         <h2 className="contact-section-title text-center display-5 fw-bold" data-aos="fade-down">Contact Me</h2>
-
+        <div className="underline mx-auto mb-5"></div>
         <div className="row mt-4">
           {/* Left Info Section */}
           <div className="col-md-6" data-aos="fade-right">
