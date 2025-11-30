@@ -1,0 +1,288 @@
+/* * =========================================================
+ * --- Global Variables & Base Styles ---
+ * =========================================================
+ */
+:root {
+    /* Primary accent color (based on original rgb(13, 202, 240) - Cyan/Info Blue) */
+    --accent-blue: rgb(13, 202, 240); 
+    /* Dark Mode Colors (Default) */
+    --bg-dark: #212529; /* Dark Footer/Info Box */
+    --bg-primary: #282c34; /* Main Section Background */
+    --text-light: #f8f9fa; /* White/Off-White Text */
+    --input-bg-dark: rgba(255, 255, 255, 0.1); 
+    --info-box-bg-dark: rgb(1, 46, 73); 
+    --placeholder-dark: #aaaaaa;
+}
+
+/* * =========================================================
+ * --- DARK MODE (DEFAULT) ---
+ * =========================================================
+ */
+
+#contact-section {
+    /* Solid background color instead of an image */
+    background-color:#000000; 
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat; 
+    position: relative;              
+    overflow: hidden;                
+    padding-top: 5rem;               
+    padding-bottom: 5rem;            
+    color: var(--text-light);        
+}
+#contact-section h1 {
+  color: rgb(13, 202, 240);
+  /* Bootstrap blue */
+}
+
+/* Removed the ::before overlay since the background is solid black */
+
+/* Ensure all content appears above any potential future overlay */
+#contact-section .container {
+    position: relative;
+    z-index: 2; 
+}
+
+/* Text and Accent Color */
+.text-info,
+.contact-section-title {
+    color: var(--accent-blue) !important; 
+}
+
+/* --- Contact Info Box Styles (Dark Blue) --- */
+.contact-info-box {
+    background-color: var(--info-box-bg-dark) !important; 
+    border-radius: 10px;
+}
+
+/* --- Input Field Styles --- */
+.contact-form-box {
+    /* Subtle background for the form container */
+    background-color: rgba(255, 255, 255, 0.05); 
+    border-radius: 10px;
+}
+
+.contact-input {
+    /* Transparent dark background for the input fields */
+    background-color: var(--input-bg-dark) !important; 
+    color: var(--text-light) !important;
+    padding: 15px 12px; 
+    border-radius: 5px;
+    border: none !important; 
+}
+
+.contact-input::placeholder {
+    color: var(--placeholder-dark); 
+}
+
+.contact-input:focus {
+    /* Focus ring using the accent blue */
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25) !important;
+    border-color: var(--accent-blue) !important;
+}
+
+/* --- Social Icons Styles --- */
+.social-icons a {
+    color: var(--text-light); 
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-blue); 
+    color: black;
+}
+
+
+/* --- Custom Button (Send Message) --- */
+.contact-submit-btn {
+    --clr: var(--accent-blue); /* Use accent color for button BG */
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--clr); 
+    color: #fff;
+    border-radius: 5px; 
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    width: 100%; 
+    justify-content: center; 
+    transition: all 0.3s;
+}
+
+.contact-submit-btn__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    color: var(--clr); 
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+/* Hover Effect for the Button */
+.contact-submit-btn:hover {
+    background-color: #000;
+    color: var(--accent-blue);
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.contact-submit-btn:hover .contact-submit-btn__icon-wrapper {
+    color: #000;
+}
+
+/* Icon SVG positioning for animation */
+.contact-submit-btn__icon-svg--copy {
+    position: absolute;
+    transform: translate(-150%, 150%);
+}
+
+.contact-submit-btn:hover .contact-submit-btn__icon-svg:first-child {
+    transition: transform 0.3s ease-in-out;
+    transform: translate(150%, -150%);
+}
+
+.contact-submit-btn:hover .contact-submit-btn__icon-svg--copy {
+    transition: transform 0.3s ease-in-out 0.1s;
+    transform: translate(0);
+}
+
+
+/* * =========================================================
+ * --- LIGHT MODE (body.light-mode) ---
+ * =========================================================
+ */
+
+body.light-mode {
+    --bg-dark: #dee2e6; /* Light Footer/Info Box */
+    --bg-primary: #f8f9fa; /* Main Section Background */
+    --text-dark: #212529; /* Dark Text */
+    --input-bg-light: #ffffff;
+    --placeholder-light: #6c757d;
+}
+body.light-mode #contact-section h1 {
+  color: #0d6efd;
+}
+
+body.light-mode #contact-section {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+}
+
+/* Header, Accent, and Links */
+body.light-mode .text-info,
+body.light-mode .contact-section-title,
+body.light-mode .contact-section a:not(.social-icons a, .contact-submit-btn) {
+    color: var(--accent-blue) !important;
+}
+
+/* General Text Color Fix */
+body.light-mode .contact-info-box p,
+body.light-mode .contact-info-box h6,
+body.light-mode .contact-form-box p,
+body.light-mode .contact-form-box label {
+    color: var(--text-dark);
+}
+
+
+/* --- Contact Info Box Styles (Light Mode) --- */
+body.light-mode .contact-info-box {
+    background-color: var(--bg-dark) !important; /* Light gray box */
+    color: var(--text-dark);
+}
+
+/* --- Input Field Styles (Light Mode) --- */
+body.light-mode .contact-form-box {
+    background-color: rgba(0, 0, 0, 0.05); /* Very subtle gray background for the form container */
+}
+
+body.light-mode .contact-input {
+    background-color: var(--input-bg-light) !important; 
+    color: var(--text-dark) !important;
+    border: 1px solid #ced4da !important; /* Add a light border */
+}
+
+body.light-mode .contact-input::placeholder {
+    color: var(--placeholder-light); 
+}
+
+/* Focus ring remains the same blue accent */
+
+/* --- Social Icons Styles (Light Mode) --- */
+body.light-mode .social-icons a {
+    color: var(--text-dark); 
+    background-color: rgba(0, 0, 0, 0.08); /* Light mode icon background */
+}
+
+body.light-mode .social-icons a:hover {
+    background-color: var(--accent-blue); 
+    color: var(--text-light); /* White on hover */
+}
+
+/* --- Custom Button (Send Message) Hover (Light Mode) --- */
+body.light-mode .contact-submit-btn:hover {
+    background-color: var(--bg-dark); /* Darker gray background on hover */
+    color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
+}
+
+body.light-mode .contact-submit-btn:hover .contact-submit-btn__icon-wrapper {
+    color: var(--text-dark); /* Dark icon on hover */
+}
+body.light-mode .txt{
+     color: #000000 !important;
+}
+
+/* * =========================================================
+ * --- MOBILE & TABLET OPTIMIZATIONS (Max Width 992px) --- 
+ * (These are generic media queries and apply to both modes)
+ * =========================================================
+ */
+
+@media (max-width: 992px) {
+    #contact-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    #contact-section .display-4 {
+        font-size: 2.25rem !important; 
+    }
+
+    #contact-section .text-center {
+        text-align: center !important;
+    }
+
+    #contact-section .w-75 {
+        width: 100% !important;
+        text-align: center; 
+    }
+    
+    .contact-info-box {
+        margin-top: 1.5rem;
+    }
+    
+    .contact-info-box h6,
+    .contact-info-box p {
+        text-align: left; 
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
