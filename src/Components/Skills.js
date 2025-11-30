@@ -34,7 +34,7 @@ const Skills = () => {
         <Row className="g-4 mt-4">
           {/* Frontend */}
           <Col md={6} lg={6}>
-            <div className="skills-card"data-aos="zoom-in">
+            <div className="skills-card"data-aos="flip-left">
               <h4 className="text-info">Frontend</h4>
               <div className="skills-list">
                  <span><AiOutlineHtml5 className="html-icon" /> HTML</span>
@@ -48,7 +48,7 @@ const Skills = () => {
 
           {/* Backend */}
           <Col md={6} lg={6}>
-            <div className="skills-card"data-aos="zoom-in">
+            <div className="skills-card"data-aos="flip-right">
               <h4 className="text-info">Backend</h4>
               <div className="skills-list">
                 <span><FaPython className="python-icon" /> Python</span>
@@ -61,7 +61,7 @@ const Skills = () => {
 
           {/* Languages */}
           <Col md={6} lg={6}>
-            <div className="skills-card"data-aos="zoom-in">
+            <div className="skills-card"data-aos="flip-left">
               <h4 className="text-info">Languages</h4>
               <div className="skills-list">
                 <span><FaPython className="python-icon" /> Python</span>
@@ -72,7 +72,7 @@ const Skills = () => {
 
           {/* Tools */}
           <Col md={6} lg={6}>
-            <div className="skills-card"data-aos="zoom-in">
+            <div className="skills-card"data-aos="flip-right">
               <h4 className="text-info">Tools</h4>
               <div className="skills-list">
                  <span><FaGitAlt className="git-icon" /> Git</span>
