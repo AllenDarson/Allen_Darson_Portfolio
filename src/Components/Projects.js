@@ -25,11 +25,11 @@ const Projects = () => {
             {/* Project 1 */}
             <div className="col-lg-4 d-flex" data-aos="zoom-in-up">
               <div className="card project-card shadow-sm h-100 w-100">
-                <img src="/gym_kart.png" className="card-img-top" alt="Gym Project" />
+                <img src="/to_do_task.png" className="card-img-top" alt="Gym Project" />
                 <div className="card-body d-flex flex-column">
-                  <h4 className="card-title">Powerhouse Fitness (E-commerce)</h4>
+                  <h4 className="card-title">Google Task-Style To-Do Web App</h4>
                   <p className="card-text">
-                    Engineered a secure, full-stack e-commerce solution (Django/SQL) for gym products, featuring role-based access control (Admin/Staff/Vendor/User) and comprehensive CRUD management. The platform offers seamless cart features and a responsive UI.
+                    This is a simple and responsive task management app built using React JS. The interface closely resembles Google Tasks, allowing users to add, edit, delete, and star their daily tasks in an intuitive way.
                   </p>
                   {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/ecommerce_django" target="_blank" variant="success">🔗 View Project Code</Button>
