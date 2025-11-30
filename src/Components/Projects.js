@@ -77,7 +77,7 @@ const Projects = () => {
             {/* Project 2 */}
             <div className="col-lg-4 d-flex" data-aos="zoom-in-up" data-aos-delay="100">
               <div className="card project-card shadow-sm h-100 w-100">
-                <img src="/Sql.jpg" className="card-img-top" alt="SQL Project" />
+                <img src="/Football_landing_page.png" className="card-img-top" alt="SQL Project" />
                 <div className="card-body d-flex flex-column">
                   <h4 className="card-title">Salary Management System (IBM)</h4>
                   <p className="card-text">
@@ -89,7 +89,7 @@ const Projects = () => {
                   <div className="text-center mt-auto custom-button-group">
                     {/* GitHub Button */}
                     <a
-                      href="https://github.com/AllenDarson/ecommerce_django"
+                      href="https://github.com/AllenDarson/football_jersey_landing_page"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="animated-button github-btn"
@@ -105,7 +105,7 @@ const Projects = () => {
 
                     {/* Live Demo Button */}
                     <a
-                      href="https://github.com/AllenDarson/ecommerce_django"
+                      href="https://football-jersey-landing-page.onrender.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="animated-button demo-btn"
