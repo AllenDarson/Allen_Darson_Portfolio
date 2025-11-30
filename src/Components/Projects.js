@@ -23,7 +23,7 @@ const Projects = () => {
 
           <div className="row g-4">
             {/* Project 1 */}
-            <div className="col-lg-4 d-flex" data-aos="fade-up">
+            <div className="col-lg-4 d-flex" data-aos="zoom-in-up">
               <div className="card project-card shadow-sm h-100 w-100">
                 <img src="/gym_kart.png" className="card-img-top" alt="Gym Project" />
                 <div className="card-body d-flex flex-column">
@@ -75,7 +75,7 @@ const Projects = () => {
             </div>
 
             {/* Project 2 */}
-            <div className="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div className="col-lg-4 d-flex" data-aos="zoom-in-up" data-aos-delay="100">
               <div className="card project-card shadow-sm h-100 w-100">
                 <img src="/Sql.jpg" className="card-img-top" alt="SQL Project" />
                 <div className="card-body d-flex flex-column">
@@ -126,7 +126,7 @@ const Projects = () => {
             </div>
 
             {/* Project 3 */}
-            <div className="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div className="col-lg-4 d-flex" data-aos="zoom-in-up" data-aos-delay="200">
               <div className="card project-card shadow-sm h-100 w-100">
                 <img src="/portfolio.png" className="card-img-top" alt="Portfolio" />
                 <div className="card-body d-flex flex-column">
