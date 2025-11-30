@@ -225,71 +225,7 @@ body {
 }
 /* /********************************************************************************************************************************************** */
 
-/* ------------------------------------------------ Skill SECTION -------------------------------------------------------------------------------*/
 
-/* ------------------------------------------------ Project SECTION -----------------------------------------------------------------------------*/
-/* Projects Section Background */
-.projects-section {
-  background-color: #282c34;
-  color: #adb5bd;
-}
-.projects-section-title {
-  color: #0d6efd;
-}
-/* Project Cards */
-.project-card {
-  background-color: #282c34;
-  /* Matches your home background */
-  border: none;
-  border-radius: 12px;
-  color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-/* Hover Effect */
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.3);
-  /* Blue glow like home theme */
-}
-
-/* Inside Card Body */
-.project-card .card-body {
-  background-color: #282c34;
-  color: white;
-  border-radius: 0 0 12px 12px;
-  padding: 25px;
-}
-/* Image Styling */
-.project-card .card-img-top {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  object-fit: cover;
-  height: 200px;
-}
-
-/* Button */
-.project-card .btn {
-  margin-top: 10px;
-}
-/* Responsive Title & Text */
-.project-card .card-title {
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-.project-card .card-text {
-  color: #dee2e6;
-  /* Lighter text for readability */
-}
-.underline {
-  width: 60px;
-  height: 4px;
-  background-color: #0d6efd;
-  border-radius: 2px;
-}
 /* ------------------------------------------------ CONTACT SECTION -----------------------------------------------------------------------------*/
 /* Contact.css */
 .contact-section {
@@ -413,45 +349,8 @@ body.light-mode .wave {
 }
 /* ------------------------------------------------ LIGHT MODE About SECTION ------------------------------------------------------------------------*/
 
-/* ------------------------------------------------ LIGHT MODE Project SECTION ------------------------------------------------------------------------*/
-/*  Light Mode Projects Section */
-body.light-mode .projects-section {
-  background-color: #f8f9fa;
-  color: #212529;
-}
 
-body.light-mode .projects-section-title {
-  color: #0d6efd;
-}
 
-body.light-mode .project-card {
-  background-color: #ffffff;
-  color: #212529;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.2);
-  /* Softer blue glow */
-}
-
-body.light-mode .project-card .card-body {
-  background-color: #ffffff;
-  color: #212529;
-}
-
-body.light-mode .project-card .card-text {
-  color: #495057;
-}
-
-body.light-mode .project-card .card-title {
-  color: #0d6efd;
-}
-
-body.light-mode .underline {
-  background-color: #0d6efd;
-}
 /* ------------------------------------------------ LIGHT MODE Contact SECTION ------------------------------------------------------------------------*/
 /*  Light Mode - Contact Section */
 body.light-mode .contact-section {
