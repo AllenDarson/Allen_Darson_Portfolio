@@ -79,9 +79,9 @@ const Projects = () => {
               <div className="card project-card shadow-sm h-100 w-100">
                 <img src="/Football_landing_page.png" className="card-img-top" alt="SQL Project" />
                 <div className="card-body d-flex flex-column">
-                  <h4 className="card-title">Salary Management System (IBM)</h4>
+                  <h4 className="card-title">KickEdge – Retro Football Jersey Landing Page</h4>
                   <p className="card-text">
-                    SQL-based salary system with CRUD operations, payroll analytics, and department-wise data handling.
+                    A modern, responsive landing page built using React + Vite, featuring a clean UI, product sections, and smooth animations. This project is designed as a showcase landing page for a football jersey brand called KickEdge.
                   </p>
                   {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/SQL-Salary-Management-System-" target="_blank" variant="success">🔗 View Project Code</Button>
