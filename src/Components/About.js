@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBirthdayCake, FaGraduationCap } from 'react-icons/fa';
 import AOS from 'aos';
 import React, { useEffect } from 'react';
+import "../Css/About.css";
 
 
 const About = () => {
@@ -18,22 +19,15 @@ const About = () => {
           {/* Header */}
           <div className="text-center mb-5" data-aos="fade-down">
             <h2 className="fw-bold display-5">About Me</h2>
-            <p className="text-muted">Who I am, what I do, and why I do it</p>
+            {/* <p className="text-muted">Who I am, what I do, and why I do it</p> */}
+            <h5 className="text-center fw-normal fst-italic mb-4">Who I am, what I do, and why I do it</h5>
             <div className="section-divider"></div>
           </div>
 
           {/* Profile Info */}
-          <div className="row align-items-center">
-            <div className="col-md-4 text-center mb-4 mb-md-0" data-aos="zoom-in">
-              <img
-                src="/portfolio-Photoroom.jpg"
-                className="img-fluid rounded-circle shadow"
-                alt="Allen Darson"
-                style={{ width: '230px', height: '230px', objectFit: 'cover' }}
-              />
-            </div>
+          <div className="row align-items-center justify-content-center">
             <div className="col-md-8" data-aos="fade-left">
-              <h4 className="fw-bold mb-3 text-primary">I'm Allen Darson C</h4>
+              <h4 className="fw-bold mb-3" >I'm Allen Darson C</h4>
               <p>
                 👋 I'm a <strong>2023 graduate</strong> passionate about python, full-stack and SQL development.<br />
                 I build modern web apps using <strong>Python, Django, Flask, SQL, HTML, CSS, Bootstrap, JavaScript, and React</strong>.
@@ -57,21 +51,36 @@ const About = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Education Timeline */}
           <div className="timeline-container mt-5">
-            <h2 className="text-center text-primary mb-5">🎓 Education</h2>
+            <h2 className="text-center mb-5">🎓 Education & 💼 Experience</h2>
+            {/* Internship */}
 
             <div className="timeline">
-               {/* Institute Course */}
-               <div className="timeline-item right" data-aos="fade-left">
+              <div className="timeline-item left" data-aos="fade-right">
+                <div className="timeline-icons">
+                  <img src="/logo3portfolio.jpg" alt="logo" />
+                </div>
+                <div className="timeline-card">
+                  <h5>Developer Intern</h5>
+                  <p className="text-muted">Acculer Media Technology India Pvt Ltd</p>
+                  <small className="fw-bold">29th september 2025 - Present</small>
+                  <p className="mt-2">
+                    {/* Grade: <strong>7.69 CGPA</strong><br /> */}
+                    Worked as a Developer Intern creating and refining web pages while handling deployments using Git, Render, and Hostinger. Contributed to website updates, SEO checks, and collaborative reviews to maintain quality and performance.
+                  </p>
+                </div>
+              </div>
+              {/* Institute Course */}
+              <div className="timeline-item right" data-aos="fade-left">
                 <div className="timeline-icon">
                   <img src="/ipcs-global-icon.jpg" alt="logo" />
                 </div>
                 <div className="timeline-card">
                   <h5>Advance Fullstack Developer (Python) Course</h5>
                   <p className="text-muted">IPCS Global Coimbatore</p>
-                  <small className="fw-bold">2024 – 2025</small>
+                  <small className="fw-bold">Sep 2024 – Aug 2025</small>
                   <p className="mt-2">
                     Completed hands-on training in Python, Fullstack development, and related technologies.
                   </p>
