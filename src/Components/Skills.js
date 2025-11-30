@@ -13,6 +13,8 @@ import { FaGithubSquare } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { AiOutlineHtml5 } from "react-icons/ai";
 
+import "../Css/Skills.css";
+
 
 const Skills = () => {
    useEffect(() => {
@@ -23,9 +25,10 @@ const Skills = () => {
        
       <Container>
         <h1 className="text-center fw-bold ">SKILLS</h1>
-        <p className="text-center text-secondary fst-italic">
+        {/* <p className="text-center text-secondary fst-italic">
           A collection of my technical skills and expertise honed through various projects
-        </p>
+        </p> */}
+         <h5 className="text-center fw-normal fst-italic mb-4">A collection of my technical skills and expertise honed through various projects</h5>
          <div className="underline mx-auto mb-4"></div>
 
         <Row className="g-4 mt-4">
@@ -36,7 +39,7 @@ const Skills = () => {
               <div className="skills-list">
                  <span><AiOutlineHtml5 className="html-icon" /> HTML</span>
                 <span><FaCss3Alt className="css-icon" /> CSS</span>
-                <span><RiJavascriptLine className="js-icon" /> JavaScript</span>
+                {/* <span><RiJavascriptLine className="js-icon" /> JavaScript</span> */}
                 <span><FaReact className="react-icon" /> React</span>
                 <span><SiBootstrap className="bootstrap-icon" /> Bootstrap</span>
               </div>
@@ -62,6 +65,7 @@ const Skills = () => {
               <h4 className="text-info">Languages</h4>
               <div className="skills-list">
                 <span><FaPython className="python-icon" /> Python</span>
+                <span><RiJavascriptLine className="js-icon" /> JavaScript</span>
               </div>
             </div>
           </Col>
@@ -79,6 +83,7 @@ const Skills = () => {
           </Col>
         </Row>
       </Container>
+    
     </section>
   );
 };
