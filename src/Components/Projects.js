@@ -3,6 +3,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import { FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import "../Css/Projects.css";
 
 
 const Projects = () => {
@@ -26,13 +29,47 @@ const Projects = () => {
                 <div className="card-body d-flex flex-column">
                   <h4 className="card-title">Powerhouse Fitness (E-commerce)</h4>
                   <p className="card-text">
-                    Built a full-stack gym e-commerce platform using Django, Bootstrap, and SQL.
-                    Added role-based access for Admin, Staff, Vendor, and User with secure login, CRUD,
-                    cart features, and a responsive UI enhanced with AOS and Boxicons.
+                    Engineered a secure, full-stack e-commerce solution (Django/SQL) for gym products, featuring role-based access control (Admin/Staff/Vendor/User) and comprehensive CRUD management. The platform offers seamless cart features and a responsive UI.
                   </p>
-                  <div className="text-center mt-auto">
+                  {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/ecommerce_django" target="_blank" variant="success">🔗 View Project Code</Button>
+                  </div> */}
+
+                  <div className="text-center mt-auto custom-button-group">
+                    {/* GitHub Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button github-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaGithub size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>GitHub</span>
+                    </a>
+
+                    {/* Live Demo Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button demo-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaExternalLinkAlt size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>Live Demo</span>
+                    </a>
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -46,9 +83,44 @@ const Projects = () => {
                   <p className="card-text">
                     SQL-based salary system with CRUD operations, payroll analytics, and department-wise data handling.
                   </p>
-                  <div className="text-center mt-auto">
+                  {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/SQL-Salary-Management-System-" target="_blank" variant="success">🔗 View Project Code</Button>
+                  </div> */}
+                  <div className="text-center mt-auto custom-button-group">
+                    {/* GitHub Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button github-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaGithub size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>GitHub</span>
+                    </a>
+
+                    {/* Live Demo Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button demo-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaExternalLinkAlt size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>Live Demo</span>
+                    </a>
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -62,18 +134,64 @@ const Projects = () => {
                   <p className="card-text">
                     A clean portfolio built with React.js, CSS and React Bootstrap to showcase my work and skills.
                   </p>
-                  <div className="text-center mt-auto">
+                  {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/Portfolio" target="_blank" variant="success">🔗 View Project Code</Button>
+                  </div> */}
+                  <div className="text-center mt-auto custom-button-group">
+                    {/* GitHub Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button github-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaGithub size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>GitHub</span>
+                    </a>
+
+                    {/* Live Demo Button */}
+                    <a
+                      href="https://github.com/AllenDarson/ecommerce_django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="animated-button demo-btn"
+                    >
+                      <div className="svg-wrapper-1">
+                        <div className="svg-wrapper">
+                          {/* ICON SIZE REDUCED TO 20 */}
+                          <FaExternalLinkAlt size={18} className="icon" />
+                        </div>
+                      </div>
+                      <span>Live Demo</span>
+                    </a>
                   </div>
+
+
+
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="text-center mt-5">
+          {/* <div className="text-center mt-5">
             <a
               href="https://github.com/AllenDarson/Allen_Darson_Portfolio"
               className="btn btn-primary github-btn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              🔍 View More Projects on GitHub
+            </a>
+          </div> */}
+          <div className="text-center mt-5">
+            <a
+              href="https://github.com/AllenDarson/Allen_Darson_Portfolio"
+              className="btn  githubs-btn"
               target="_blank"
               rel="noreferrer"
             >
