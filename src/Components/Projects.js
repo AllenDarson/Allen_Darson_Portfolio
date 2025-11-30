@@ -38,7 +38,7 @@ const Projects = () => {
                   <div className="text-center mt-auto custom-button-group">
                     {/* GitHub Button */}
                     <a
-                      href="https://github.com/AllenDarson/ecommerce_django"
+                      href="https://github.com/AllenDarson/To-do-list-Task"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="animated-button github-btn"
@@ -54,7 +54,7 @@ const Projects = () => {
 
                     {/* Live Demo Button */}
                     <a
-                      href="https://github.com/AllenDarson/ecommerce_django"
+                      href="https://allendarson.github.io/To-do-list-Task/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="animated-button demo-btn"
@@ -128,11 +128,12 @@ const Projects = () => {
             {/* Project 3 */}
             <div className="col-lg-4 d-flex" data-aos="zoom-in-up" data-aos-delay="200">
               <div className="card project-card shadow-sm h-100 w-100">
-                <img src="/portfolio.png" className="card-img-top" alt="Portfolio" />
+                <img src="/gym_kart.png" className="card-img-top" alt="Portfolio" />
                 <div className="card-body d-flex flex-column">
-                  <h4 className="card-title">Personal Portfolio</h4>
+                  <h4 className="card-title">Powerhouse Fitness (E-commerce)</h4>
                   <p className="card-text">
-                    A clean portfolio built with React.js, CSS and React Bootstrap to showcase my work and skills.
+                    Engineered a secure, full-stack e-commerce solution (Django/SQL) for gym products, featuring role-based access control (Admin/Staff/Vendor/User) and comprehensive CRUD management. The platform offers seamless cart features and a responsive UI.
+
                   </p>
                   {/* <div className="text-center mt-auto">
                     <Button href="https://github.com/AllenDarson/Portfolio" target="_blank" variant="success">🔗 View Project Code</Button>
