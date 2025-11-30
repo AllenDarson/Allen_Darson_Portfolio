@@ -1,0 +1,240 @@
+/* About Section */
+.about-wrapper {
+  background-color: rgba(255, 255, 255, 0.092);
+  /* invisible card look */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(13, 109, 253, 0.147);
+  /* soft glow */
+  transition: 0.3s ease;
+}
+.about-section {
+  min-height: 100vh;
+  padding: 90px 0 60px;
+  background-color: #282c34;
+  color: #f8f9fa;
+}
+.about-section h2,h4 {
+  color: rgb(13, 202, 240);
+}
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background-color:rgb(13, 202, 240);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.about-section .text-muted {
+  color: #adb5bd !important;
+}
+.about-section p {
+  color: #f8f9fa;
+  line-height: 1.6;
+}
+.about-section {
+  min-height: 100vh;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  background-color: #000000 !important;;
+  color: #f8f9fa;
+}
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: rgb(13, 202, 240);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.timeline {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: rgb(13, 202, 240);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: rgb(13, 202, 240);
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+}
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+.timeline-card {
+  background-color: #2c2f36;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.timeline-icon {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 50px;
+  height: 50px;
+  background-color: #282c34;
+  border: 4px solid rgb(13, 202, 240);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.timeline-icons {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  width: 50px;
+  height: 50px;
+  background-color: #282c34;
+  border: 4px solid rgb(13, 202, 240);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.timeline-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.timeline-icons img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    text-align: left !important;
+    left: 0 !important;
+  }
+  .timeline-icon,
+  .timeline-icons {
+    left: 20px !important;
+    right: auto !important;
+    top: 20px;
+    transform: translateY(0);
+  }
+
+  .timeline-card {
+    margin-top: 20px;
+  }
+}
+/********************day mode*********************/
+/*about*/
+/* Day Mode CSS for body.light-mode */
+
+/* Global Section Styles */
+body.light-mode .about-section {
+  /* White/Light background for the body/section */
+  background-color: #f8f9fa !important;
+  /* Dark text color */
+  color: #212529;
+}
+
+/* About Wrapper/Card Look */
+body.light-mode .about-wrapper {
+  /* Subtle light background for the card */
+  background-color: rgba(0, 0, 0, 0.03);
+  /* Darker, more visible shadow for light mode */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings and Main Accent Colors */
+body.light-mode .about-section h2,
+body.light-mode .about-section h4 { /* Assuming H4 is used for "I'm Allen Darson C" */
+  color: #0d6efd;
+}
+
+/* Divider Color */
+body.light-mode .section-divider {
+  background-color:  #0d6efd;
+}
+
+/* Text Colors */
+body.light-mode .about-section .text-muted {
+  /* Standard muted color for light mode */
+  color: #6c757d !important;
+}
+body.light-mode .about-section p {
+  /* Dark text color for paragraphs */
+  color: #212529;
+}
+
+/* Timeline Styles */
+body.light-mode .timeline::before {
+  /* Timeline vertical line color */
+  background-color:  #0d6efd;
+}
+
+/* Timeline Card */
+body.light-mode .timeline-card {
+  /* White background for the card */
+  background-color: #ffffff;
+  /* Dark border and softer shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Icons/Dots */
+body.light-mode .timeline-icon,
+body.light-mode .timeline-icons {
+  /* Light background for the icon circle center */
+  background-color: #f8f9fa;
+  /* Border color remains the accent color */
+  border: 4px solid  #0d6efd;
+}
