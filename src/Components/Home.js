@@ -37,7 +37,7 @@ const Home = () => {
 
           {/* Brand */}
           <a className="navbar-brand fw-bold fs-4" href="#home">
-            <PiHandPeaceDuotone />Allen Darson C
+            Allen Darson C
           </a>
 
           <div className="d-flex align-items-center d-lg-none">
@@ -71,7 +71,7 @@ const Home = () => {
               <li className="nav-item mx-2"><a className="nav-link" href="#about"><FaUserTie /> About</a></li>
               <li className="nav-item mx-2"><a className="nav-link" href="#skills"><FaGraduationCap /> Skills</a></li>
               <li className="nav-item mx-2"><a className="nav-link" href="#projects"><FaListCheck /> Projects</a></li>
-              <li className="nav-item mx-2"><a className="nav-link" href="#contact"><FaPaperPlane /> Contact</a></li>
+              <li className="nav-item mx-2"><a className="nav-link" href="#contact-section"><FaPaperPlane /> Contact</a></li>
             </ul>
 
             {/* Theme Toggle (desktop only) */}
@@ -101,7 +101,7 @@ const Home = () => {
 
               <motion.a
                 href={resumeFile}
-                download="Allen_Dason_Resume_Wipro"
+                download="myResume"
                 whileHover={{ scale: 1.05 }}
                 className="btn btn-dark me-3"
               >
@@ -109,7 +109,7 @@ const Home = () => {
                 Download Resume
               </motion.a>
 
-              <div className="mt-4 fs-4 social-icons d-flex gap-3">
+              <div className="mt-4 fs-4 social-icon d-flex gap-3">
                 <a href="https://www.linkedin.com/in/allen-darson-c-53b6b4217" className="icon-balloon linkedin" target="_blank" rel="noreferrer"><CiLinkedin /></a>
                 <a href="https://wa.me/+918760961525" className="icon-balloon whatsapp" target="_blank" rel="noreferrer"><SiWhatsapp /></a>
                 <a href="https://instagram.com" className="icon-balloon instagram" target="_blank" rel="noreferrer"><GrInstagram /></a>
