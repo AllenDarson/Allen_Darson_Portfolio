@@ -5,11 +5,40 @@ import AOS from 'aos';
 import React, { useEffect } from 'react';
 import "../Css/About.css";
 
+import { motion } from 'framer-motion';
+
 
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
+
+  const text = "About Me"; // You can change this to "My Mission" or "Identity" later
+  
+  const containerVars = {
+    initial: {},
+    animate: {
+      transition: {
+        // 0.05 is the "sweet spot" for short headings
+        staggerChildren: 0.05, 
+      }
+    }
+  };
+
+  const letterVars = {
+    initial: {
+      opacity: 0,
+      y: 60, 
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.1, // Slightly longer duration for a smoother glide
+        ease: [0.22, 1, 0.36, 1], 
+      }
+    }
+  };
 
 
   return (
@@ -17,10 +46,36 @@ const About = () => {
       <div className="container">
         <div className="about-wrapper">
           {/* Header */}
-          <div className="text-center mb-5" data-aos="fade-down">
-            <h2 className="fw-bold display-5">About Me</h2>
+           <div style={{ overflow: 'hidden', padding: '10px 0' }}> 
+      <motion.h2 
+        className="fw-bold display-5" 
+        variants={containerVars}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: false, amount: 0.4 }}
+        style={{ 
+          display: 'flex', 
+          justifyContent: 'center', // Centers the heading
+          color: 'rgb(13, 202, 240)', // Matching your Skills/Projects colorrgb(29, 120, 239)
+          margin: 0,
+          overflow: 'hidden' 
+        }}
+      >
+        {text.split("").map((char, index) => (
+          <motion.span 
+            key={index} 
+            variants={letterVars} 
+            style={{ display: 'inline-block' }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        ))}
+      </motion.h2>
+    </div>
+          <div className="text-center mb-5">
+           
             {/* <p className="text-muted">Who I am, what I do, and why I do it</p> */}
-            <h5 className="text-center fw-normal fst-italic mb-4">Who I am, what I do, and why I do it</h5>
+            {/* <h5 className="text-center fw-normal fst-italic mb-4">Who I am, what I do, and why I do it</h5> */}
             <div className="section-divider"></div>
           </div>
 
@@ -54,7 +109,7 @@ const About = () => {
 
           {/* Education Timeline */}
           <div className="timeline-container mt-5">
-            <h2 className="text-center mb-5">🎓 Education & 💼 Experience</h2>
+            <h2 className="text-center mb-5">🎓 Education & Experience</h2>
             {/* Internship */}
 
             <div className="timeline">
@@ -65,7 +120,7 @@ const About = () => {
                 <div className="timeline-card">
                   <h5>Developer Intern</h5>
                   <p className="text-muted">Acculer Media Technology India Pvt Ltd</p>
-                  <small className="fw-bold">29th september 2025 - Present</small>
+                  <small className="fw-bold">29th september 2025 - 03th January 2026</small>
                   <p className="mt-2">
                     {/* Grade: <strong>7.69 CGPA</strong><br /> */}
                     Worked as a Developer Intern creating and refining web pages while handling deployments using Git, Render, and Hostinger. Contributed to website updates, SEO checks, and collaborative reviews to maintain quality and performance.
@@ -80,7 +135,7 @@ const About = () => {
                 <div className="timeline-card">
                   <h5>Advance Fullstack Developer (Python) Course</h5>
                   <p className="text-muted">IPCS Global Coimbatore</p>
-                  <small className="fw-bold">Sep 2024 – Aug 2025</small>
+                  <small className="fw-bold">03 Sep 2024 – 25 Aug 2025</small>
                   <p className="mt-2">
                     Completed hands-on training in Python, Fullstack development, and related technologies.
                   </p>
