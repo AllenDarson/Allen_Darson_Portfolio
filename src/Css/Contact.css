@@ -17,6 +17,9 @@ body.light-mode {
     --card-border: #e0e0e0;
     --input-bg: #f0f0f0;
 }
+body.light-mode .contact-title{
+    color:#0d6efd;
+}
 
 #contact-section {
     background-color: var(--section-bg);
