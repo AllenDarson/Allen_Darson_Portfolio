@@ -1,83 +1,50 @@
-html {
-  scroll-behavior: smooth;
+/* --- GLOBAL SCROLLBAR SYSTEM --- */
+
+/* Root Variables for Dynamic Colors */
+:root {
+  --sb-track: #121212;
+  --sb-thumb: rgb(13, 202, 240); /* Cyan for Dark Mode */
+  --sb-thumb-hover: #0bb5d9;
 }
+
+body.light-mode {
+  --sb-track: #f1f3f5;
+  --sb-thumb: #0d6efd; /* Blue for Light Mode */
+  --sb-thumb-hover: #0b5ed7;
+}
+
 /* WebKit Browsers: Chrome, Safari, Edge */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #121212;
-  /* Match your dark background */
+  background: var(--sb-track);
 }
+
 ::-webkit-scrollbar-thumb {
-  background-color: #007bff;
-  /* Use your portfolio's accent color */
+  background-color: var(--sb-thumb);
   border-radius: 10px;
-  border: 2px solid #121212;
-  /* Creates spacing around thumb */
+  /* The border color now also changes based on the track variable */
+  border: 2px solid var(--sb-track); 
+  transition: background-color 0.3s ease;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0056b3;
-  /* Slightly darker on hover */
+  background-color: var(--sb-thumb-hover);
 }
-/* Firefox */
+
+/* Firefox Support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #007bff #121212;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
 }
-/* Stylish loading screen */
-.loading-screen {
-  height: 100vh;
-  width: 100%;
-  background-color: #111;
-  color: #00ffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease-in-out;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.dot {
-  animation: blink 1.4s infinite both;
-  font-size: 2.5rem;
-  color: #00ffff;
-}
-.dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.dot:nth-child(4) {
-  animation-delay: 0.6s;
-}
-@keyframes blink {
 
-  0%,
-  20% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+/* Smooth Scrolling (Keep your original) */
+html {
+  scroll-behavior: smooth;
 }
+
 /* ------------------------------------------------ Home page --------------------------------------------------*/
 html,
 body {
@@ -91,7 +58,7 @@ body {
   scroll-behavior: smooth;
 }
 /* ------------------------------------------------ NAVBAR --------------------------------------------------*/
-.navbar {
+/* .navbar {
   background-color:#000000;
 }
 .navbar-brand {
@@ -105,8 +72,42 @@ body {
 }
 .nav-link:hover {
   transform: translateY(-2px);
-  color: #00c6ff !important;
+  color:  rgb(13, 202, 240) !important;
+} */
+ .navbar {
+  background-color: #000000;
+  padding: 12px 0; /* Keep it tight and professional */
 }
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  /* Using a very clean, simple transition for that 'light' feel */
+  transition: all 0.3s ease-in-out;
+  padding: 8px 15px !important;
+  position: relative;
+}
+
+/* --- THE CLEAN HOVER (RESTORING YOUR ORIGINAL FEEL) --- */
+.nav-link:hover {
+  /* Simple, elegant lift */
+  transform: translateY(-3px); 
+  
+  /* Your original Cyan color highlight */
+  color: rgb(13, 202, 240) !important; 
+  
+  /* Adding a very subtle underline that glows slightly - very recruiter friendly */
+  text-shadow: 0 0 8px rgba(13, 202, 240, 0.3);
+}
+
+
+
 /* Theme Toggle */
 .theme-toggle-icon {
   background: none;
@@ -147,11 +148,13 @@ body {
 }
 .highlight {
   /* color: #007bff; Bootstrap blue */
-background: linear-gradient(90deg, #007bff, #00c6ff);
+/* background: linear-gradient(90deg, #007bff, #00c6ff);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  font-weight: bold; */
 }
+
+
 /* ------------------------------------------------ SOCIAL ICONS (BALLOON STYLE) --------------------------------------------------*/
 .social-icon {
   display: flex;
@@ -232,30 +235,96 @@ background: linear-gradient(90deg, #007bff, #00c6ff);
     transform: rotate(0deg);
   }
 }
-/* /********************************************************************************************************************************************** */
 
 
-/* ------------------------------------------------ CONTACT SECTION -----------------------------------------------------------------------------*/
+
+/* ------------------------------------------------ Resume Button -------------------------------------------------------------------------------*/
+/* Base styling from your provided code */
+.btn-github {
+  cursor: pointer;
+  display: inline-flex; /* Changed to inline-flex for better button behavior */
+  align-items: center;  /* Centers icon and text vertically */
+  gap: 0.5rem;
+  border: none;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 100px;
+  font-weight: 800;
+  place-content: center;
+  padding: 0.75rem 1.5rem; /* Slightly more side padding */
+  font-size: 0.825rem;
+  line-height: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-github:hover {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(13, 202, 240, 0.2); /* Changed yellow tint to Cyan to match your theme */
+  color: rgb(13, 202, 240); /* Cyan text on hover */
+  transform: translate(0, -0.25rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Light Mode Adaptation */
+body.light-mode .btn-github {
+  background-color: rgba(0, 0, 0, 0.227);
+  color: #212529;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .btn-github:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  box-shadow: inset 0 0 0 1px rgba(13, 110, 253, 0.2);
+}
+/* ------------------------------------------------ Project SECTION -----------------------------------------------------------------------------*/
+
 
 /* ------------------------------------------------ LIGHT MODE SECTION ------------------------------------------------------------------------*/
 /* === LIGHT MODE STYLING === */
 body.light-mode {
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
+ background: linear-gradient(135deg, #f8f9fa, #e9f2ff, #dbeafe);
   color: #212529;
 }
  /* Light (Day) Mode */
-.light-mode .navbar {
-  background-color: #f8f9fa; /* Bootstrap light gray */
+/* .light-mode .navbar {
+  background-color: #f8f9fa; 
 }
 .light-mode .navbar-brand {
-  color: #212529 !important; /* Dark text */
+  color: #212529 !important; 
 }
 .light-mode .nav-link {
   color: #212529 !important;
 }
 .light-mode .nav-link:hover {
-  color: #0d6efd !important; /* Bootstrap blue */
+  color: #0d6efd !important; 
+} */
+ /* --- LIGHT MODE --- */
+.light-mode .navbar {
+  background-color: #f8f9fa;
 }
+
+.light-mode .navbar-brand {
+  color: #212529 !important;
+}
+
+.light-mode .nav-link {
+  color: #212529 !important;
+}
+
+.light-mode .nav-link:hover {
+  transform: translateY(-3px);
+  color: #0d6efd !important; /* Original Bootstrap Blue */
+  text-shadow: none;
+}
+ 
+ 
 .light-mode .theme-toggle-icon {
   color: #212529; /* Dark icon */
 
@@ -313,8 +382,222 @@ body.light-mode .icon-balloon {
 body.light-mode .wave {
   color: #0d6efd;
 }
+
+body.light-mode .highlight{
+  color:#000000;
+}
+
+
 /* ------------------------------------------------ LIGHT MODE About SECTION ------------------------------------------------------------------------*/
+/* Container for the whole line */
+.reveal-wrapper {
+  display: flex;
+  align-items: center;
+  height: 60px; /* Adjust based on your font size */
+  overflow: hidden;
+}
 
+/* "A" remains stationary */
+.static-text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff; /* White in dark mode */
+  transition: color 0.3s ease;
+}
 
+body.light-mode .static-text {
+  color: #212529; /* Dark gray in light mode */
+}
 
+/* The box that crops the sliding text */
+.role-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.reveal-role {
+  font-size: 2rem;
+  margin: 0;
+  color: rgb(13, 202, 240); /* Cyan for Dark Mode */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Light Mode Switch */
+body.light-mode .reveal-role {
+  color: #0d6efd; /* Your preferred blue */
+}
+
+@media (max-width: 768px) {
+  .static-text, .reveal-role {
+    font-size: 1.5rem;
+  }
+}
 /* ------------------------------------------------ LIGHT MODE Contact SECTION ------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+/* Stylish loading screen */
+/* --- MODERN LOADER DESIGN --- */
+
+.loading-screen {
+  height: 100vh;
+  width: 100%;
+  background-color: #000000; /* Pure black for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loader-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Three Glowing Rings */
+.loader-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid rgb(13, 202, 240);
+  border-radius: 50%;
+  animation: rotate-loader 1.5s linear infinite;
+}
+
+.loader-ring:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  animation-duration: 1.5s;
+}
+
+.loader-ring:nth-child(2) {
+  width: 80%;
+  height: 80%;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  border-top-color: rgba(13, 202, 240, 0.5);
+}
+
+.loader-ring:nth-child(3) {
+  width: 60%;
+  height: 60%;
+  animation-duration: 1s;
+  border-top-color: #ffffff;
+}
+
+/* Center Text (Initials) */
+.loader-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 1px;
+  animation: pulse-text 2s ease-in-out infinite;
+}
+
+.loader-text span {
+  color: rgb(13, 202, 240);
+}
+
+/* Animations */
+@keyframes rotate-loader {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-text {
+  0%, 100% { 
+    opacity: 1; 
+    text-shadow: 0 0 10px rgba(13, 202, 240, 0.8);
+  }
+  50% { 
+    opacity: 0.5; 
+    text-shadow: 0 0 5px rgba(13, 202, 240, 0.2);
+  }
+}
+
+/* Scroll to Top Button Style */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: rgb(13, 202, 240);
+  border: none;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(13, 202, 240, 0.3);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  background-color: #fff;
+}
+/* /********************************************************************************************************************************************** */
+/* Container remains 50px */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #1a1a1a; 
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.4);
+}
+
+/* TARGET THE ARROW SIZE HERE */
+.scroll-to-top img, 
+.scroll-to-top svg {
+  width: 18px;  /* Reduced from 24px for a sleeker look */
+  height: 18px; /* Reduced from 24px */
+  filter: brightness(0) invert(1); /* Keeps it white */
+  transition: transform 0.3s ease;
+}
+
+/* Light Mode Styling */
+body.light-mode .scroll-to-top {
+  background-color: #343a40; 
+  box-shadow: 0px 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+/* Hover Effect: Arrow nudge */
+.scroll-to-top:hover img,
+.scroll-to-top:hover svg {
+  transform: translateY(-2px); /* Slight internal movement on hover */
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  background-color: #333;
+}
+
+body.light-mode .scroll-to-top:hover {
+  background-color: #495057;
+}
+/*-----------------------------------------------------------------------------------------------------*/
