@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import "../Css/Projects.css";
+import "../Css/Project.css";
 import { motion } from 'framer-motion';
 
 // Swiper Imports
