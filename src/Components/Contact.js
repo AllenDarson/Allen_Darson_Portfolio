@@ -142,7 +142,8 @@ const Contact = () => {
                                 <div className="info-icon"><FaMapMarkerAlt /></div>
                                 <div className="info-content">
                                     <h6>Location</h6>
-                                    <p>Coimbatore, India</p>
+                                    <p>No.69 Lalbahadur Nagar, Masakalipalaiyam </p>
+                                    <p>Road, Peelamedu,Coimbatore, India</p>
                                 </div>
                             </div>
                             <hr className="divider" />
