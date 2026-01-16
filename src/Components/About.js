@@ -14,13 +14,13 @@ const About = () => {
   }, []);
 
   const text = "About Me"; // You can change this to "My Mission" or "Identity" later
-  
+
   const containerVars = {
     initial: {},
     animate: {
       transition: {
         // 0.05 is the "sweet spot" for short headings
-        staggerChildren: 0.05, 
+        staggerChildren: 0.05,
       }
     }
   };
@@ -28,14 +28,14 @@ const About = () => {
   const letterVars = {
     initial: {
       opacity: 0,
-      y: 60, 
+      y: 60,
     },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 1.1, // Slightly longer duration for a smoother glide
-        ease: [0.22, 1, 0.36, 1], 
+        ease: [0.22, 1, 0.36, 1],
       }
     }
   };
@@ -46,34 +46,34 @@ const About = () => {
       <div className="container">
         <div className="about-wrapper">
           {/* Header */}
-           <div style={{ overflow: 'hidden', padding: '10px 0' }}> 
-      <motion.h2 
-        className="fw-bold display-5" 
-        variants={containerVars}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: false, amount: 0.4 }}
-        style={{ 
-          display: 'flex', 
-          justifyContent: 'center', // Centers the heading
-          color: 'rgb(13, 202, 240)', // Matching your Skills/Projects colorrgb(29, 120, 239)
-          margin: 0,
-          overflow: 'hidden' 
-        }}
-      >
-        {text.split("").map((char, index) => (
-          <motion.span 
-            key={index} 
-            variants={letterVars} 
-            style={{ display: 'inline-block' }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))}
-      </motion.h2>
-    </div>
+          <div style={{ overflow: 'hidden', padding: '10px 0' }}>
+            <motion.h2
+              className="fw-bold display-5"
+              variants={containerVars}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: false, amount: 0.4 }}
+              style={{
+                display: 'flex',
+                justifyContent: 'center', // Centers the heading
+                color: 'rgb(13, 202, 240)', // Matching your Skills/Projects colorrgb(29, 120, 239)
+                margin: 0,
+                overflow: 'hidden'
+              }}
+            >
+              {text.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={letterVars}
+                  style={{ display: 'inline-block' }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.h2>
+          </div>
           <div className="text-center mb-5">
-           
+
             {/* <p className="text-muted">Who I am, what I do, and why I do it</p> */}
             {/* <h5 className="text-center fw-normal fst-italic mb-4">Who I am, what I do, and why I do it</h5> */}
             <div className="section-divider"></div>
