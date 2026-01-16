@@ -21,7 +21,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresenc
 
 
 const Home = () => {
-  
+
   const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
@@ -60,7 +60,7 @@ const Home = () => {
     }
   };
 
-  
+
 
   return (
     <div>
@@ -128,30 +128,30 @@ const Home = () => {
                 <span className="wave">👋🏻</span> <span className="highlight">Hi, I'm <span className="highlight">Allen Darson</span></span>
               </h1>
 
-             {/* REVEAL ANIMATION SECTION */}
-<div className="reveal-wrapper mb-4">
-  {/* The "A" stays stationary */}
-  <span className="static-text me-2">A</span>
-  
-  <div className="role-container">
-    <AnimatePresence mode="wait">
-      <motion.h2
-        key={roles[index]}
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: "-100%", opacity: 0 }}
-        transition={{ 
-          duration: 0.8, 
-          ease: [0.16, 1, 0.3, 1] 
-        }}
-        className="reveal-role fw-bold"
-      >
-        {roles[index]}
-      </motion.h2>
-    </AnimatePresence>
-  </div>
-</div>
-             
+              {/* REVEAL ANIMATION SECTION */}
+              <div className="reveal-wrapper mb-4">
+                {/* The "A" stays stationary */}
+                <span className="static-text me-2">A</span>
+
+                <div className="role-container">
+                  <AnimatePresence mode="wait">
+                    <motion.h2
+                      key={roles[index]}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className="reveal-role fw-bold"
+                    >
+                      {roles[index]}
+                    </motion.h2>
+                  </AnimatePresence>
+                </div>
+              </div>
+
 
               <p className="lead mb-4">
                 A passionate <strong>Python Developer</strong>, <strong>Fullstack Developer</strong>, and <strong>SQL Developer</strong> skilled in Python, SQL, Django, Flask, and React.
@@ -168,18 +168,18 @@ const Home = () => {
                 Download Resume
               </motion.a> */}
               <motion.a
-  href={resumeFile}
-  download="Allen_Darson_Resume_Wipro.pdf"
-  className="btn-github resume-btn" // Added 'resume-btn' for specific styling
-  whileHover={{ scale: 1.05 }}
-  style={{ textDecoration: 'none' }} // Ensures no underline
->
-  {/* The Icon */}
-  <LiaFileDownloadSolid size={20} />
-  
-  {/* The Text */}
-  <span>Download Resume</span>
-</motion.a>
+                href={resumeFile}
+                download="Allen_Darson_Resume_Wipro.pdf"
+                className="btn-github resume-btn" // Added 'resume-btn' for specific styling
+                whileHover={{ scale: 1.05 }}
+                style={{ textDecoration: 'none' }} // Ensures no underline
+              >
+                {/* The Icon */}
+                <LiaFileDownloadSolid size={20} />
+
+                {/* The Text */}
+                <span>Download Resume</span>
+              </motion.a>
 
               <div className="mt-4 fs-4 social-icon d-flex gap-3">
                 <a href="https://www.linkedin.com/in/allen-darson-c-53b6b4217" className="icon-balloon linkedin" target="_blank" rel="noreferrer"><CiLinkedin /></a>
