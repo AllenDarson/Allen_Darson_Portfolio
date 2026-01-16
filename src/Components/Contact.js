@@ -105,7 +105,7 @@ const Contact = () => {
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formTelephone">
-                                            <Form.Control type="tel" placeholder="Phone (Optional)" className="contact-input" value={formData.telephone} onChange={handleChange} />
+                                            <Form.Control type="tel" placeholder="Phone " className="contact-input" value={formData.telephone} onChange={handleChange} />
                                         </Form.Group>
                                     </Col>
                                 </Row>
