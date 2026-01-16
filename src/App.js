@@ -1,58 +1,74 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { Button } from 'react-bootstrap';
+import { FaArrowUp } from "react-icons/fa";
 
-import Basic from './Components/Basic';
 import Home from './Components/Home';
 import About from './Components/About';
 import Skills from './Components/Skills';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
+  const [showButton, setShowButton] = useState(false);
 
-  const toggleDarkMode = () => setDarkMode(prev => !prev);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     document.body.classList.toggle('light-mode', !darkMode);
-  }, [darkMode])
+  }, [darkMode]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2500); // Increased slightly to show off the animation
     return () => clearTimeout(timer);
   }, []);
+
   if (loading) {
     return (
       <div className="loading-screen">
-        <span>Loading</span>
-        <span className="dot">.</span>
-        <span className="dot">.</span>
-        <span className="dot">.</span>
+        <div className="loader-container">
+          <div className="loader-ring"></div>
+          <div className="loader-ring"></div>
+          <div className="loader-ring"></div>
+          <div className="loader-text">
+            AD<span>.</span>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div>
-      {/* Pass darkMode and toggle function to Home */}
-      {/* <button className="theme-toggle-btn" onClick={toggleDarkMode} title="Toggle theme">
-        {darkMode ? '🌙' : '☀️'}
-      </button> */}
+    <div className="App">
       <Home />
       <About />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
+
+      {showButton && (
+        <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to top">
+          <FaArrowUp className="icon" />
+        </button>
+      )}
     </div>
   );
 }
 
 export default App;
-
