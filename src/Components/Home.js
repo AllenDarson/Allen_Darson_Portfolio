@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import resumeFile from '../Images/myResume.pdf';
+import resumeFile from '../Images/Allen_Darson_Resume_Wipro.pdf';
 
 // import { motion } from 'framer-motion';
 import { Button } from 'react-bootstrap';
@@ -169,7 +169,7 @@ const Home = () => {
               </motion.a> */}
               <motion.a
   href={resumeFile}
-  download="myResume"
+  download="Allen_Darson_Resume_Wipro.pdf"
   className="btn-github resume-btn" // Added 'resume-btn' for specific styling
   whileHover={{ scale: 1.05 }}
   style={{ textDecoration: 'none' }} // Ensures no underline
