@@ -63,14 +63,14 @@ const Contact = () => {
             color: 'var(--text-main)',
             showConfirmButton: false
         });
-        
+
         setFormData({ firstName: '', lastName: '', email: '', telephone: '', comments: '' });
     };
 
     return (
         <section id="contact-section" className="py-5">
             <Container>
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
