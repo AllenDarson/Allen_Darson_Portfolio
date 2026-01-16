@@ -57,7 +57,7 @@
   bottom: 0;
   left: 50%;
   width: 4px;
-  background-color: rgb(13, 202, 240);
+  background-color:rgb(13, 202, 240);
   transform: translateX(-50%);
   z-index: 0;
 }
@@ -238,3 +238,8 @@ body.light-mode .timeline-icons {
   /* Border color remains the accent color */
   border: 4px solid  #0d6efd;
 }
+
+body.light-mode .fw-bold {
+  color:#0d6efd !important;
+}
+/**************************************************************************/
