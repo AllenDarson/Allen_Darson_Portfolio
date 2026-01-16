@@ -1,44 +1,94 @@
-/* Footer Section */
+/* --- FOOTER MAIN --- */
 .footer-section {
   background-color: #000000;
-  /* dark */
   color: #f8f9fa;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separation */
 }
 
-.footer-section a {
-  color: #f8f9fa;
-}
-.footer-section a:hover {
-  transform: scale(1.1);
+.footer-name {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
 }
 
+.footer-tagline {
+  font-size: 0.95rem;
+  color: #adb5bd;
+}
 
-/*  Light Mode - Footer */
-/*  Light Mode - Footer */
+.highlight-cyan {
+  color: rgb(13, 202, 240);
+  font-weight: 500;
+}
+
+.letter-spacing {
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+/* --- ICON BUTTONS --- */
+.footer-icon-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white !important;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+}
+
+.footer-icon-btn:hover {
+  transform: translateY(-5px);
+  background: rgba(13, 202, 240, 0.1);
+  border-color: rgb(13, 202, 240);
+  color: rgb(13, 202, 240) !important;
+  box-shadow: 0 10px 20px rgba(13, 202, 240, 0.1);
+}
+
+/* --- DIVIDER & BOTTOM --- */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.footer-bottom-link {
+  text-decoration: none;
+  color: #6c757d !important;
+  transition: color 0.3s;
+}
+
+.footer-bottom-link:hover {
+  color: rgb(13, 202, 240) !important;
+}
+
+/* --- LIGHT MODE --- */
 body.light-mode .footer-section {
-  background-color: #dee2e6;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
   color: #212529;
 }
 
-/* Fix text color for paragraph and heading */
-body.light-mode .footer-section p,
-body.light-mode .footer-section h5,
-body.light-mode .footer-section h6 {
-  color: #212529;
-}
+body.light-mode .footer-tagline { color: #6c757d; }
+body.light-mode .footer-name { color: #000; }
 
-/* Fix link color */
-body.light-mode .footer-section a {
+body.light-mode .footer-icon-btn {
+  background: #fff;
+  border-color: #ddd;
   color: #212529 !important;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-body.light-mode .footer-section a:hover {
+body.light-mode .footer-icon-btn:hover {
+  background: rgba(13, 110, 253, 0.05);
+  border-color: #0d6efd;
   color: #0d6efd !important;
-  transform: scale(1.1);
 }
 
-/* Fix HR */
-body.light-mode .footer-section hr {
-  background-color: #adb5bd;
+body.light-mode .footer-divider {
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
 }
