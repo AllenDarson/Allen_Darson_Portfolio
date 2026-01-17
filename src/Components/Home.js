@@ -145,6 +145,7 @@ const Home = () => {
                         ease: [0.16, 1, 0.3, 1]
                       }}
                       className="reveal-role fw-bold"
+                      style={{ width: 'fit-content' }} // 🔑 Ensures the width matches the text exactly
                     >
                       {roles[index]}
                     </motion.h2>
