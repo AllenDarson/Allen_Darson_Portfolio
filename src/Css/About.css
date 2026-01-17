@@ -102,13 +102,51 @@
   left: 50%;
   text-align: left;
 }
-.timeline-card {
+/* .timeline-card {
   background-color: #2c2f36;
   padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+} */
+ .timeline-card {
+  position: relative;
+  /* Glassmorphism Effect */
+  background: rgba(44, 47, 54, 0.6); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  padding: 25px;
+  border-radius: 16px;
+  /* Multi-layered border for depth */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
 }
+
+/* The Animated "Accent Light" on the side */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0dcaf0, #0d6efd);
+  opacity: 0.7;
+}
+
+/* Hover Interaction */
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(44, 47, 54, 0.8);
+  border-color: rgba(13, 202, 240, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
+              0 0 20px rgba(13, 202, 240, 0.1);
+}
+ 
 .timeline-icon {
   position: absolute;
   top: 50%;
@@ -222,12 +260,46 @@ body.light-mode .timeline::before {
 }
 
 /* Timeline Card */
-body.light-mode .timeline-card {
-  /* White background for the card */
+/* body.light-mode .timeline-card {
+  
   background-color: #ffffff;
-  /* Dark border and softer shadow */
+  
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+} */
+ body.light-mode .timeline-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .timeline-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(13, 110, 253, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Text adjustments for readability */
+.timeline-card h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+body.light-mode .timeline-card h3 {
+  color: #212529;
+}
+
+.timeline-card p {
+  font-weight: 400; /* As we discussed, 400 is the best for reading */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .timeline-card p {
+  color: #495057;
 }
 
 /* Timeline Icons/Dots */
