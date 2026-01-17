@@ -114,6 +114,8 @@ const Projects = () => {
               pagination={{
                 el: '.video-pagination',
                 clickable: true,
+                bulletClass: 'swiper-pagination-bullet',
+                bulletActiveClass: 'swiper-pagination-bullet-active',
               }}
               breakpoints={{
                 // Responsive breakpoints
