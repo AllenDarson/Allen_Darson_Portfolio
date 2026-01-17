@@ -392,48 +392,57 @@ body.light-mode .highlight{
 /* Container for the whole line */
 .reveal-wrapper {
   display: flex;
-  align-items: center;
-  height: 60px; /* Adjust based on your font size */
-  overflow: hidden;
+  align-items: center; /* Ensures 'A' and roles line up on the same center line */
+  flex-wrap: nowrap;   /* Prevents the 'r' from jumping to a new line */
+  margin-bottom: 1.5rem;
 }
 
 /* "A" remains stationary */
 .static-text {
   font-size: 2rem;
   font-weight: 600;
-  color: #fff; /* White in dark mode */
+  color: #fff;
   transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevents 'A' from getting squashed */
 }
 
 body.light-mode .static-text {
-  color: #212529; /* Dark gray in light mode */
+  color: #212529;
 }
 
 /* The box that crops the sliding text */
 .role-container {
-  height: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden; /* This keeps the 'reveal' effect */
   display: flex;
   align-items: center;
+  padding-right: 10px; /* 🔑 EXTRA ROOM: Prevents the last letter from clipping */
+  height: 60px;       /* Keep height to allow vertical slide */
 }
 
 .reveal-role {
   font-size: 2rem;
   margin: 0;
-  color: rgb(13, 202, 240); /* Cyan for Dark Mode */
+  color: rgb(13, 202, 240);
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: nowrap; /* Ensures it stays in one line */
+  display: block;
 }
 
-/* Light Mode Switch */
 body.light-mode .reveal-role {
-  color: #0d6efd; /* Your preferred blue */
+  color: #0d6efd;
 }
 
+/* Mobile Fixes */
 @media (max-width: 768px) {
   .static-text, .reveal-role {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Slightly smaller to fit small screens */
+  }
+  .role-container {
+    height: 45px; /* Proportional height for smaller text */
+  }
+  .reveal-wrapper {
+    height: auto;
   }
 }
 /* ------------------------------------------------ LIGHT MODE Contact SECTION ------------------------------------------------------------------------*/
