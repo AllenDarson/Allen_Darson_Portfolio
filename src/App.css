@@ -553,51 +553,84 @@ body.light-mode .reveal-role {
 }
 /* /********************************************************************************************************************************************** */
 /* Container remains 50px */
+/* --- COMPACT & MOBILE-READY SCROLL-TO-TOP --- */
+
 .scroll-to-top {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background-color: #1a1a1a; 
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  bottom: 30px; /* Reduced from 40px */
+  right: 30px;  /* Reduced from 40px */
+  width: 42px;  /* Reduced from 48px */
+  height: 42px; /* Reduced from 48px */
+  border-radius: 12px; /* Slightly tighter radius for smaller box */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  /* Night Mode */
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* TARGET THE ARROW SIZE HERE */
+body.light-mode .scroll-to-top {
+  background: #f8f9fa;
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
+}
+
 .scroll-to-top img, 
 .scroll-to-top svg {
-  width: 18px;  /* Reduced from 24px for a sleeker look */
-  height: 18px; /* Reduced from 24px */
-  filter: brightness(0) invert(1); /* Keeps it white */
-  transition: transform 0.3s ease;
+  width: 16px; /* Scaled down to match smaller box */
+  height: 16px;
+  color: #0dcaf0;
+  fill: #0dcaf0;
+  animation: arrow-bounce 2s infinite ease-in-out;
 }
 
-/* Light Mode Styling */
-body.light-mode .scroll-to-top {
-  background-color: #343a40; 
-  box-shadow: 0px 4px 12px rgba(13, 110, 253, 0.4);
+/* --- MOBILE VIEW (Responsive) --- */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px; /* Move closer to edge on mobile */
+    right: 20px;
+    width: 38px;  /* Even smaller on mobile for better UX */
+    height: 38px;
+    border-radius: 10px;
+  }
+  
+  .scroll-to-top img, 
+  .scroll-to-top svg {
+    width: 14px; /* Tiny but sharp */
+    height: 14px;
+  }
 }
 
-/* Hover Effect: Arrow nudge */
-.scroll-to-top:hover img,
-.scroll-to-top:hover svg {
-  transform: translateY(-2px); /* Slight internal movement on hover */
+/* Keyframes remain perfectly centered */
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
-.scroll-to-top:hover {
-  transform: translateY(-5px);
-  background-color: #333;
-}
-
-body.light-mode .scroll-to-top:hover {
-  background-color: #495057;
+/* Hover Effects (kept for desktop users) */
+@media (min-width: 769px) {
+  .scroll-to-top:hover {
+    transform: translateY(-5px);
+    background: #0dcaf0;
+    border-color: #0dcaf0;
+  }
+  .scroll-to-top:hover img, .scroll-to-top:hover svg {
+    color: #000;
+    fill: #000;
+  }
+  body.light-mode .scroll-to-top:hover {
+    background: #0d6efd;
+    border-color: #0d6efd;
+  }
+  body.light-mode .scroll-to-top:hover img, body.light-mode .scroll-to-top:hover svg {
+    color: #fff;
+    fill: #fff;
+  }
 }
 /*-----------------------------------------------------------------------------------------------------*/
