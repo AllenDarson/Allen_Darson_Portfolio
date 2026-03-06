@@ -461,10 +461,49 @@ body.light-mode .demo-btn {
 
 
 
-body.light-mode .github-btn:hover {
+/* body.light-mode .github-btn:hover {
     background: #0aacee; 
     color: #fff !important;
     fill: #fff;
+} */
+ /* --- LIGHT MODE ADAPTATION --- */
+body.light-mode .githubs-btn {
+  /* Frosted Acrylic Look */
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(15px) saturate(160%);
+  -webkit-backdrop-filter: blur(15px) saturate(160%);
+  
+  /* Darker Rim for visibility on white */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 2.5px solid rgba(255, 255, 255, 0.8); /* Stronger top reflection */
+  
+  color: #212529 !important; /* Dark text for readability */
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    inset 0 0 10px rgba(0, 0, 0, 0.02);
+}
+
+body.light-mode .githubs-btn:hover {
+  color: #fff !important; /* Text turns white when liquid fills up */
+  border-color: #0aacee;
+  box-shadow: 
+    0 15px 30px rgba(10, 172, 238, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure the liquid fill stays vibrant in light mode */
+body.light-mode .githubs-btn .liquid {
+  background: linear-gradient(45deg, #0aacee, #007bff);
+}
+
+/* Adjust the shimmer to be more visible on light backgrounds */
+body.light-mode .githubs-btn .shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
 }
 
 body.light-mode .demo-btn:hover {
