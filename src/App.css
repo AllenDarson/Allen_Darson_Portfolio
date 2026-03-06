@@ -58,25 +58,10 @@ body {
   scroll-behavior: smooth;
 }
 /* ------------------------------------------------ NAVBAR --------------------------------------------------*/
-/* .navbar {
-  background-color:#000000;
-}
-.navbar-brand {
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 1px;
-  color: white !important;
-}
-.nav-link {
-  color: white !important;
-  transition: 0.3s ease;
-}
-.nav-link:hover {
-  transform: translateY(-2px);
-  color:  rgb(13, 202, 240) !important;
-} */
- .navbar {
+
+ /* .navbar {
   background-color: #000000;
-  padding: 12px 0; /* Keep it tight and professional */
+  padding: 12px 0; 
 }
 
 .navbar-brand {
@@ -88,27 +73,27 @@ body {
 .nav-link {
   color: white !important;
   font-weight: 500;
-  /* Using a very clean, simple transition for that 'light' feel */
+ 
   transition: all 0.3s ease-in-out;
   padding: 8px 15px !important;
   position: relative;
 }
 
-/* --- THE CLEAN HOVER (RESTORING YOUR ORIGINAL FEEL) --- */
+
 .nav-link:hover {
-  /* Simple, elegant lift */
+  
   transform: translateY(-3px); 
   
-  /* Your original Cyan color highlight */
+  
   color: rgb(13, 202, 240) !important; 
   
-  /* Adding a very subtle underline that glows slightly - very recruiter friendly */
+
   text-shadow: 0 0 8px rgba(13, 202, 240, 0.3);
 }
 
 
 
-/* Theme Toggle */
+
 .theme-toggle-icon {
   background: none;
   border: none;
@@ -121,7 +106,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Mobile Adjustments */
+
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1rem;
@@ -129,8 +114,121 @@ body {
   .theme-toggle-icon {
     font-size: 18px;
   }
+} */
+/* --- Floating Crystal Navbar --- */
+.navbar {
+  background: rgba(255, 255, 255, 0.01) !important;
+  padding: 8px 0;
+  
+  /* High-end Water/Glass Physics */
+  backdrop-filter: blur(25px) saturate(210%) brightness(1.1);
+  -webkit-backdrop-filter: blur(25px) saturate(210%) brightness(1.1);
+
+  /* The "iPhone Rim" - Sharp white edge */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(255, 255, 255, 0.4); 
+  
+  /* Depth without weight */
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),            
+    inset 0 0 20px rgba(255, 255, 255, 0.1); 
+
+  /* Floating pill shape */
+  border-radius: 100px; 
+  margin: 15px auto;
+  width: 95%; /* Keeps it from touching screen edges */
+  max-width: 1200px;
+  transition: all 0.5s ease;
 }
 
+/* --- The Jelly Links --- */
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  margin: 0 4px; /* Space between the jelly capsules */
+  padding: 8px 20px !important;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+  
+  /* Rubber/Jelly Physics for the "Jump" */
+  transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+/* --- THE RUBBER JELLY JUMP & CRYSTAL SHINE --- */
+.nav-link:hover {
+  /* The "Rubber Jump" - pops up and expands slightly */
+  transform: translateY(-4px) scale(1.08);
+  
+  /* Align inside the borders: Capsule background stays away from nav edges */
+  background: rgba(255, 255, 255, 0.12);
+  color: #0dcaf0 !important;
+  
+  /* Crystal Refraction Shine */
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  
+  text-shadow: 0 0 15px rgba(13, 202, 240, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The Crystal Moving Streak (Crystal Shine) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 40%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(35deg);
+  pointer-events: none;
+}
+
+.nav-link:hover::after {
+  left: 150%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* --- MOBILE RESPONSIVE JELLY --- */
+@media (max-width: 991px) {
+  .navbar {
+    width: 92%;
+    margin: 10px auto;
+    border-radius: 30px; /* Tighter rounding for mobile */
+  }
+
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item {
+    margin: 8px 0;
+  }
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff !important;
+  padding-left: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
 
 /* Theme Toggle */
 .theme-toggle-icon {
