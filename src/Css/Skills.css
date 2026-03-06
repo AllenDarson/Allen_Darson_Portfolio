@@ -13,12 +13,75 @@
     box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
 }
 
-.modern-skill-card {
+/* .modern-skill-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
     height: 100%;
+} */
+ .modern-skill-card {
+  /* 1. Ultra-Clear Jelly Base */
+  background: linear-gradient(
+    165deg, 
+    rgba(255, 255, 255, 0.12) 0%, 
+    rgba(255, 255, 255, 0.02) 40%, 
+    rgba(255, 255, 255, 0.05) 100%
+  ) !important;
+  
+  /* 2. Deep Liquid Physics (Static) */
+  /* High blur makes your icons look like they are floating inside a thick gel */
+  backdrop-filter: blur(35px) saturate(210%) brightness(1.1);
+  -webkit-backdrop-filter: blur(35px) saturate(210%) brightness(1.1);
+  
+  padding: 30px;
+  height: 100%;
+  
+  /* 3. The Crystal Rim (Sharp Light Hit) */
+  /* A 2px top border creates the 'specular highlight' of a liquid surface */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(255, 255, 255, 0.5); 
+  border-radius: 28px; 
+
+  /* 4. Constant Liquid Depth */
+  /* These inner shadows create the physical volume of the jelly */
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),            /* Soft outer shadow */
+    inset 0 10px 15px -10px rgba(255, 255, 255, 0.2), /* Internal top glow */
+    inset 0 -8px 15px -10px rgba(0, 0, 0, 0.1),       /* Internal bottom depth */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);        /* Sharp inner veneer */
+
+  /* Keep it smooth and stationary */
+  transition: none; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- THE CRYSTAL SHINE (Slow Static Sweep) --- */
+/* A very faint, slow shimmer to keep the cards looking 'wet' without hover */
+.modern-skill-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 50%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(35deg);
+  pointer-events: none;
+  animation: skillCrystalSweep 15s infinite ease-in-out;
+}
+
+@keyframes skillCrystalSweep {
+  0% { left: -150%; opacity: 0; }
+  10% { opacity: 1; }
+  30% { left: 150%; opacity: 0; }
+  100% { left: 150%; opacity: 0; }
 }
 
 .category-title {
