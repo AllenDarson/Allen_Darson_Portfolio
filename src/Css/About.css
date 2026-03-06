@@ -1,13 +1,78 @@
 /* About Section */
-.about-wrapper {
+/* .about-wrapper {
   background-color: rgba(255, 255, 255, 0.092);
-  /* invisible card look */
+  
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 0 30px rgba(13, 109, 253, 0.147);
-  /* soft glow */
+  
   transition: 0.3s ease;
+} */
+ .about-wrapper {
+  /* 1. Ultra-Clear Jelly Base */
+  /* A very faint gradient keeps the center clear for reading long text */
+  background: linear-gradient(
+    145deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.02) 50%, 
+    rgba(255, 255, 255, 0.06) 100%
+  ) !important;
+  
+  /* 2. Deep Liquid Physics (Static) */
+  /* High blur depth makes the "About" content look suspended in liquid */
+  backdrop-filter: blur(40px) saturate(210%) brightness(1.1);
+  -webkit-backdrop-filter: blur(40px) saturate(210%) brightness(1.1);
+  
+  padding: 40px;
+  border-radius: 32px; /* Increased rounding for the soft jelly shape */
+  
+  /* 3. The Crystal Rim (High-End Specular Highlight) */
+  /* A 2px top-weighted border to simulate a thick glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 2.5px solid rgba(255, 255, 255, 0.5); 
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* 4. Constant Liquid Depth Shadows */
+  /* Soft glow combined with inner depth for a 3D effect */
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.25),           /* Soft drop shadow */
+    inset 0 15px 25px -10px rgba(255, 255, 255, 0.15), /* Top inner glow */
+    inset 0 -10px 20px -10px rgba(0, 0, 0, 0.1),      /* Bottom inner depth */
+    0 0 30px rgba(13, 110, 253, 0.15);         /* Preserving your original Cyan glow */
+
+  /* Purely static: No hover movements */
+  transition: none;
+  position: relative;
+  overflow: hidden;
 }
+
+/* --- THE AMBIENT CRYSTAL SHIMMER --- */
+/* A very slow, wide sweep that makes the large About card look like real glass */
+.about-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 70%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+  animation: aboutCrystalSweep 20s infinite ease-in-out;
+}
+
+@keyframes aboutCrystalSweep {
+  0% { left: -150%; opacity: 0; }
+  10% { opacity: 1; }
+  35% { left: 150%; opacity: 0; }
+  100% { left: 150%; opacity: 0; }
+}
+
 .about-section {
   min-height: 100vh;
   padding: 90px 0 60px;
