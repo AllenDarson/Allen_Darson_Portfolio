@@ -233,11 +233,118 @@
 }
 
 /* Specific Hover effect for GitHub button */
-.github-btn:hover {
+/* .github-btn:hover {
   background: #0b93b1; 
   color: #fff !important;
   fill: #fff;
+} */
+ .githubs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 38px;
+  cursor: pointer;
+  text-decoration: none !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100px;
+  
+  /* Crystal Aesthetic */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  
+  /* Specular Rim */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  
+  color: white !important;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  z-index: 1;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+/* --- THE INTERNAL LIQUID --- */
+.githubs-btn .liquid {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #0dcaf0, #007bff);
+  /* This creates a "wave" effect at the top of the liquid */
+  border-radius: 40% 40% 0 0; 
+  transition: all 0.8s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  z-index: -1;
+}
+
+/* --- THE FLOATING ICON --- */
+.icon-float {
+  display: inline-block;
+  font-size: 1.2rem;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- HOVER PHYSICS --- */
+.githubs-btn:hover {
+  transform: translateY(-10px);
+  border-color: rgba(13, 202, 240, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(13, 202, 240, 0.2);
+}
+
+.githubs-btn:hover .liquid {
+  top: 0;
+  border-radius: 0;
+}
+
+.githubs-btn:hover .icon-float {
+  /* Magnifying glass "jumps" and then starts bobbing */
+  transform: scale(1.4) rotate(-15deg);
+  animation: iconBob 2s infinite ease-in-out 0.6s;
+}
+
+/* --- CRYSTAL SHIMMER --- */
+.githubs-btn .shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.githubs-btn:hover .shimmer {
+  left: 100%;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes iconBob {
+  0%, 100% { transform: scale(1.4) rotate(-15deg) translateY(0); }
+  50% { transform: scale(1.4) rotate(-5deg) translateY(-5px); }
+}
+
+/* --- THE CLICK SQUISH --- */
+.githubs-btn:active {
+  transform: translateY(-2px) scale(0.95);
+  transition: 0.1s;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+ 
 
 
 /* Night Mode (Default) - Black Body Background */
@@ -351,6 +458,8 @@ body.light-mode .demo-btn {
     color: white;
     fill: white;
 }
+
+
 
 body.light-mode .github-btn:hover {
     background: #0aacee; 

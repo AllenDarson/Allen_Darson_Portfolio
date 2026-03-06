@@ -167,11 +167,28 @@ const Projects = () => {
           </div>
           {/* --- CAROUSEL END --- */}
 
-          <div className="text-center mt-5">
+          {/* <div className="text-center mt-5">
             <a href="https://github.com/AllenDarson/Allen_Darson_Portfolio" className="btn githubs-btn" target="_blank" rel="noreferrer">
               <span className="btn-text">🔍 View More Projects on GitHub</span>
             </a>
-          </div>
+          </div> */}
+
+          <div className="text-center mt-5">
+  <a 
+    href="https://github.com/AllenDarson/Allen_Darson_Portfolio" 
+    className="githubs-btn" 
+    target="_blank" 
+    rel="noreferrer"
+  >
+    <span className="shimmer"></span>
+    <span className="liquid"></span>
+    <span className="btn-content">
+      <span className="icon-float">🔍</span>
+      <span className="btn-text">Explore My Full Lab on GitHub</span>
+    </span>
+  </a>
+</div>
+          
         </div>
       </div>
     </section>
