@@ -101,12 +101,15 @@
 }
 
 /* Inside Card Body */
-.project-card .card-body {
+/* .project-card .card-body {
   background-color: #282c34;
   color: white;
   border-radius: 0 0 12px 12px;
   padding: 25px;
-}
+} */
+
+
+
 /* Image Styling */
 .project-card .card-img-top {
   border-top-left-radius: 12px;
