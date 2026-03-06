@@ -19,7 +19,79 @@
   flex-direction: column;
   justify-content: space-between;
 } */
+.project-card {
+  /* 1. Clear Jelly Base - Deep Translucency */
+  background: linear-gradient(
+    165deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.01) 40%, 
+    rgba(255, 255, 255, 0.04) 100%
+  ) !important;
+  
+  /* 2. Liquid Physics (Static) */
+  /* High saturation to make project images pop through the glass */
+  backdrop-filter: blur(30px) saturate(200%) brightness(1.05);
+  -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.05);
 
+  /* 3. The Crystal 'Veneer' */
+  /* Sharp 2px top edge to catch the 'light' from above */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 2px solid rgba(255, 255, 255, 0.4); 
+  border-radius: 24px; /* Slightly softer rounding for project layouts */
+  
+  /* 4. Constant Liquid Depth Shadows */
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.3),           
+    inset 0 10px 15px -8px rgba(255, 255, 255, 0.15), 
+    inset 0 -8px 15px -10px rgba(0, 0, 0, 0.1);      
+
+  /* Layout alignment from your original code */
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  /* Remove transitions as requested (static) */
+  transition: none; 
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- THE CRYSTAL SHIMMER (Slow Static Ambient Light) --- */
+/* This very slow sweep makes the project card look like high-end hardware */
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 70%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+  animation: projectCrystalSweep 18s infinite ease-in-out;
+}
+
+@keyframes projectCrystalSweep {
+  0% { left: -150%; opacity: 0; }
+  5% { opacity: 1; }
+  25% { left: 150%; opacity: 0; }
+  100% { left: 150%; opacity: 0; }
+}
+
+/* Ensure images inside the card inherit a slight glass feel */
+.project-card img {
+  border-radius: 16px;
+  margin: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
 
 /* Hover Effect */
 .project-card:hover {
