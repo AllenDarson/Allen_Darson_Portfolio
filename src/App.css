@@ -352,48 +352,101 @@ body {
 
 
 /* ------------------------------------------------ Resume Button -------------------------------------------------------------------------------*/
-/* Base styling from your provided code */
+/* --- Jelly-Crystal Button Styling --- */
 .btn-github {
   cursor: pointer;
-  display: inline-flex; /* Changed to inline-flex for better button behavior */
-  align-items: center;  /* Centers icon and text vertically */
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
   border: none;
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 100px;
   font-weight: 550;
   place-content: center;
-  padding: 0.75rem 1.5rem; /* Slightly more side padding */
+  padding: 0.75rem 1.5rem;
   font-size: 0.825rem;
   line-height: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  color: #fff;
   text-decoration: none;
+  
+  /* Crystal Base with Liquid Distortion */
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #fff;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  
+  /* The "Crystal Rim" - Sharp top edge highlight */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+
+  /* Jelly Depth Shadows */
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+  /* Transition for that elastic snap */
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
 }
 
+/* --- THE JELLY JUMP & CRYSTAL SHINE --- */
 .btn-github:hover {
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
-    inset 0 0 0 1px rgba(13, 202, 240, 0.2); /* Changed yellow tint to Cyan to match your theme */
-  color: rgb(13, 202, 240); /* Cyan text on hover */
-  transform: translate(0, -0.25rem);
-  background-color: rgba(0, 0, 0, 0.5);
+  /* Rubber Jelly Jump */
+  transform: translateY(-0.35rem) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: rgb(13, 202, 240); /* Your theme Cyan */
+
+  /* Crystal Glow */
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.25),
+    inset 0 0 15px rgba(255, 255, 255, 0.3),
+    inset 0 0 0 1px rgba(13, 202, 240, 0.2);
 }
 
-/* Light Mode Adaptation */
+/* --- THE "SQUISH" CLICK --- */
+.btn-github:active {
+  transform: translateY(1px) scale(0.94);
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.1s ease;
+}
+
+/* Moving Crystal Streak (Shine) */
+.btn-github::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 50%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(35deg);
+  pointer-events: none;
+}
+
+.btn-github:hover::after {
+  left: 150%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* --- LIGHT MODE JELLY --- */
 body.light-mode .btn-github {
-  background-color: rgba(0, 0, 0, 0.227);
+  background-color: rgba(0, 0, 0, 0.05) !important;
   color: #212529;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1.5px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px) saturate(150%);
 }
 
 body.light-mode .btn-github:hover {
-  background-color: rgba(13, 110, 253, 0.1);
+  background-color: rgba(13, 110, 253, 0.08) !important;
   color: #0d6efd;
-  box-shadow: inset 0 0 0 1px rgba(13, 110, 253, 0.2);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px rgba(13, 110, 253, 0.1);
 }
 /* ------------------------------------------------ Project SECTION -----------------------------------------------------------------------------*/
 
