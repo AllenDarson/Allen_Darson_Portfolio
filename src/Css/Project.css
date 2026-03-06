@@ -7,9 +7,9 @@
   color: #0d6efd;
 }
 /* Project Cards */
-.project-card {
+/* .project-card {
   background-color: #282c34;
-  /* Matches your home background */
+  
   border: none;
   border-radius: 12px;
   color: white;
@@ -18,7 +18,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
+
+
 /* Hover Effect */
 .project-card:hover {
   transform: translateY(-8px);
