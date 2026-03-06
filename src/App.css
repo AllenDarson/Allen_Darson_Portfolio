@@ -120,6 +120,7 @@ body {
 .theme-toggle-icon:hover {
   transform: scale(1.1);
 }
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .navbar-brand {
@@ -128,6 +129,20 @@ body {
   .theme-toggle-icon {
     font-size: 18px;
   }
+}
+
+
+/* Theme Toggle */
+.theme-toggle-icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.theme-toggle-icon:hover {
+  transform: scale(1.1);
 }
 /* ------------------------------------------------ HERO SECTION --------------------------------------------------*/
 .hero-section {
