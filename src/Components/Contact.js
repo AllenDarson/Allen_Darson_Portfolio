@@ -374,7 +374,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <hr className="divider" />
-                            <h6 className="follow-text text-center">Social Profiles</h6>
+                            <h6 className="follow-text text-left">Social Profiles</h6>
                             <div className="social-grid">
                                 <a href="https://wa.me/+918760961525" target="_blank" rel="noreferrer" className="social-btn"><FaWhatsapp /></a>
                                 <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="social-btn"><FaLinkedinIn /></a>
