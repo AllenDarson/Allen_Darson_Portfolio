@@ -12,7 +12,6 @@ import Footer from './Components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(true);
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -28,13 +27,9 @@ function App() {
   };
 
   useEffect(() => {
-    document.body.classList.toggle('light-mode', !darkMode);
-  }, [darkMode]);
-
-  useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500); // Increased slightly to show off the animation
+    }, 2500); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -55,6 +50,14 @@ function App() {
 
   return (
     <div className="App">
+      {/* BACKGROUND STAR LAYER */}
+      <div className="stars-wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
+
+      {/* FOREGROUND CONTENT LAYER */}
       <Home />
       <About />
       <Skills />
@@ -63,8 +66,8 @@ function App() {
       <Footer />
 
       {showButton && (
-        <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to top">
-          <FaArrowUp className="icon" />
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          <FaArrowUp />
         </button>
       )}
     </div>
