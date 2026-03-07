@@ -266,7 +266,7 @@ const Contact = () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Message Delivered!',
-                    text: 'Hi Allen, your message was sent successfully. I will get back to you soon!',
+                    text: 'Message successfully delivered. Thank you for your interest! Expect a response within 24–48 hours.',
                     timer: 5000,
                     background: '#1a1a1a',
                     color: '#fff',
