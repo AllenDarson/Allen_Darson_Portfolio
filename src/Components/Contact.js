@@ -189,7 +189,7 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        // Logic to map form IDs to state keys
+        // Logic to map form IDs (like formFirstName) to state keys (firstName)
         let key = id.replace('form', '');
         key = key.charAt(0).toLowerCase() + key.slice(1);
         setFormData({ ...formData, [key]: value });
@@ -209,25 +209,26 @@ const Contact = () => {
         });
     };
 
-    // --- THE MAIL SENDING LOGIC ---
+    // --- SECURE MAIL SENDING LOGIC ---
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // 1. Validation
+        // 1. Validation: Ensure required fields are filled
         if (!formData.firstName || !formData.email || !formData.comments) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Missing Info',
-                text: 'Please fill in Name, Email, and Message.',
+                text: 'Please provide your Name, Email, and Message.',
                 background: '#1a1a1a',
                 color: '#fff'
             });
             return;
         }
 
-        // 2. Show Loading Spinner
+        // 2. Show "Sending..." Animation
         Swal.fire({
-            title: 'Sending to Allen...',
+            title: 'Connecting to Allen...',
+            text: 'Sending your message securely.',
             allowOutsideClick: false,
             background: '#1a1a1a',
             color: '#fff',
@@ -236,16 +237,16 @@ const Contact = () => {
             }
         });
 
-        // 3. Prepare the payload
+        // 3. Prepare Web3Forms Payload
         const payload = {
-            // ↓↓↓ PUT YOUR ACCESS KEY HERE ↓↓↓
+            // ↓↓↓ PASTE YOUR ACCESS KEY FROM WEB3FORMS HERE ↓↓↓
             access_key: "61d247b3-1ba3-4dd3-8f83-fd81c362c909", 
             name: `${formData.firstName} ${formData.lastName}`,
             email: formData.email,
             phone: formData.telephone,
             message: formData.comments,
             from_name: "Portfolio Contact Form",
-            subject: `New Message from ${formData.firstName} (Portfolio)`
+            subject: `New Project Inquiry from ${formData.firstName}`
         };
 
         try {
@@ -261,25 +262,28 @@ const Contact = () => {
             const result = await response.json();
 
             if (result.success) {
+                // 4. Success Feedback
                 Swal.fire({
                     icon: 'success',
-                    title: 'Message Sent!',
-                    text: 'Hi Allen, your message was sent successfully!',
-                    timer: 4000,
+                    title: 'Message Delivered!',
+                    text: 'Hi Allen, your message was sent successfully. I will get back to you soon!',
+                    timer: 5000,
                     background: '#1a1a1a',
                     color: '#fff',
                     showConfirmButton: false
                 });
-                // Reset form fields
+                
+                // Reset Form Fields
                 setFormData({ firstName: '', lastName: '', email: '', telephone: '', comments: '' });
             } else {
-                throw new Error("API Error");
+                throw new Error("Submission Failed");
             }
         } catch (error) {
+            // 5. Error Feedback
             Swal.fire({
                 icon: 'error',
-                title: 'Failed to Send',
-                text: 'Something went wrong. Please try again later.',
+                title: 'Oops!',
+                text: 'The mail server is busy. Please try again in a moment.',
                 background: '#1a1a1a',
                 color: '#fff'
             });
@@ -296,14 +300,18 @@ const Contact = () => {
                     className="text-center mb-5"
                 >
                     <h1 className="display-4 fw-bold contact-title">Connect With Me</h1>
-                    <p className="contact-subtitle">Feel free to reach out for new projects, ideas, or collaborations.</p>
+                    <p className="contact-subtitle">I'm currently open to new opportunities and collaborations.</p>
                     <div className="underline mx-auto mb-4"></div>
                 </motion.div>
 
                 <Row className="justify-content-center">
+                    {/* FORM SIDE */}
                     <Col lg={6} className="mb-4" data-aos="fade-up">
                         <div className="p-4 glass-card contact-form-container">
                             <Form onSubmit={handleSubmit}>
+                                {/* Anti-Bot Hidden Field */}
+                                <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formFirstName">
@@ -324,12 +332,12 @@ const Contact = () => {
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formTelephone">
-                                            <Form.Control type="tel" placeholder="Phone" className="contact-input" value={formData.telephone} onChange={handleChange} />
+                                            <Form.Control type="tel" placeholder="Phone Number" className="contact-input" value={formData.telephone} onChange={handleChange} />
                                         </Form.Group>
                                     </Col>
                                 </Row>
                                 <Form.Group className="mb-4" controlId="formComments">
-                                    <Form.Control as="textarea" rows={4} placeholder="Your Message" className="contact-input" value={formData.comments} onChange={handleChange} />
+                                    <Form.Control as="textarea" rows={4} placeholder="Tell me about your project..." className="contact-input" value={formData.comments} onChange={handleChange} />
                                 </Form.Group>
                                 <div className="d-grid">
                                     <Button type="submit" className="contact-submit-btn">
@@ -341,6 +349,7 @@ const Contact = () => {
                         </div>
                     </Col>
 
+                    {/* INFO SIDE */}
                     <Col lg={4} data-aos="fade-up" data-aos-delay="200">
                         <div className="p-4 glass-card contact-info-container">
                             <div className="info-row" onClick={() => copyToClipboard("+918760961525", "Phone")}>
@@ -365,11 +374,11 @@ const Contact = () => {
                                 </div>
                             </div>
                             <hr className="divider" />
-                            <h6 className="follow-text">Follow Me</h6>
+                            <h6 className="follow-text text-center">Social Profiles</h6>
                             <div className="social-grid">
-                                <a href="https://wa.me/+918760961525" className="social-btn"><FaWhatsapp /></a>
-                                <a href="https://linkedin.com/in/yourprofile" className="social-btn"><FaLinkedinIn /></a>
-                                <a href="https://github.com/AllenDarson" className="social-btn"><FaGithub /></a>
+                                <a href="https://wa.me/+918760961525" target="_blank" rel="noreferrer" className="social-btn"><FaWhatsapp /></a>
+                                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="social-btn"><FaLinkedinIn /></a>
+                                <a href="https://github.com/AllenDarson" target="_blank" rel="noreferrer" className="social-btn"><FaGithub /></a>
                             </div>
                         </div>
                     </Col>
