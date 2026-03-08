@@ -6,7 +6,10 @@ import "../Css/Footer.css";
 export default function Footer() {
   return (
     <footer className="footer-section">
-      <div className="container">
+      {/* BACKGROUND STARS */}
+      <div className="footer-star-layer"></div>
+
+      <div className="container footer-content-relative">
         <div className="footer-content py-5">
           <div className="row align-items-center">
             {/* Brand/Role Side */}
