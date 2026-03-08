@@ -22,6 +22,7 @@
                     radial-gradient(1px 1px at 80% 80%, #ffffff, transparent);
   background-size: 400px 400px;
   animation: footerStars 180s linear infinite;
+  will-change: background-position;
   opacity: 0.6;
 }
 
