@@ -43,6 +43,7 @@
         radial-gradient(1px 1px at 150px 100px, #ddd, rgba(0,0,0,0));
     background-size: 200px 200px; /* The "Tile" size */
     animation: revolveSpace 100s linear infinite;
+    will-change: background-position;
     opacity: 0.5;
 }
 
@@ -54,6 +55,7 @@
         radial-gradient(2px 2px at 500px 100px, #0dcaf0, rgba(0,0,0,0));
     background-size: 600px 600px;
     animation: revolveSpace 60s linear infinite;
+    will-change: background-position;
     opacity: 0.4;
 }
 
@@ -64,6 +66,7 @@
         radial-gradient(2px 2px at 10% 90%, #0dcaf0, rgba(0,0,0,0));
     background-size: 800px 800px;
     animation: revolveSpace 40s linear infinite;
+    will-change: background-position;
     opacity: 0.3;
 }
 
