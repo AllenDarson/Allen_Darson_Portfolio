@@ -20,7 +20,6 @@ const Skills = () => {
 
   const text = "Skills & Technologies";
 
-  // Heading Animation Logic
   const containerVars = {
     initial: {},
     animate: { transition: { staggerChildren: 0.03 } }
@@ -67,8 +66,15 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-5">
-      <Container>
-        {/* RESTORED ANIMATED HEADING */}
+      {/* DEEP SPACE BACKGROUND LAYERS */}
+      <div className="star-container">
+        <div className="stars-small"></div>
+        <div className="stars-medium"></div>
+        <div className="stars-large"></div>
+      </div>
+
+      <Container style={{ position: 'relative', zIndex: 3 }}>
+        {/* ANIMATED HEADING */}
         <div style={{ overflow: 'hidden', padding: '10px 0' }}>
           <motion.h1
             className="text-center fw-bold display-5"
