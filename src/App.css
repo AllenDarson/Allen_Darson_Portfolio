@@ -275,6 +275,7 @@ body {
                     radial-gradient(1px 1px at 75px 150px, #fff, transparent);
   background-size: 250px 250px;
   animation: heroSpaceMove 150s linear infinite;
+  will-change: background-position;
   opacity: 0.4;
 }
 
@@ -283,6 +284,7 @@ body {
   background-image: radial-gradient(1.5px 1.5px at 120px 200px, rgb(13, 202, 240, 0.4), transparent);
   background-size: 350px 350px;
   animation: heroSpaceMove 100s linear infinite reverse;
+  will-change: background-position;
   opacity: 0.3;
 }
 
