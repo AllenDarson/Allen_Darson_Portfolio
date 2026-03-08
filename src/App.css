@@ -143,6 +143,10 @@ body {
   width: 95%; /* Keeps it from touching screen edges */
   max-width: 1200px;
   transition: all 0.5s ease;
+  will-change: transform, opacity;
+    /* This prevents the "flicker" during fast scrolls */
+    transform: translateZ(0); 
+    -webkit-font-smoothing: antialiased;
 }
 
 /* --- The Jelly Links --- */
