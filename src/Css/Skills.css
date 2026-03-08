@@ -1,7 +1,68 @@
-#skills {
+/* #skills {
     padding: 100px 0;
     background-color: #000000;
     transition: background 0.4s ease;
+} */
+ /* --- PROFESSIONAL PARALLAX DEEP SPACE --- */
+#skills {
+    padding: 100px 0;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+}
+
+/* Star Layers Container */
+.star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Layer 1: Tiny distant stars (Very Slow) */
+.stars-small {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    /* Massive box-shadow for a full "visible" sky */
+    box-shadow: 10vw 20vh #fff, 35vw 45vh #fff, 70vw 15vh #fff, 85vw 80vh #fff, 20vw 90vh #fff, 50vw 10vh #fff, 95vw 55vh #fff, 40vw 30vh #fff, 15vw 60vh #fff, 55vw 85vh #fff, 80vw 25vh #fff, 45vw 5vh #fff, 5vw 35vh #fff, 65vw 50vh #fff, 25vw 75vh #fff, 90vw 10vh #fff;
+    animation: spaceMove 150s linear infinite;
+}
+
+/* Layer 2: Medium stars with a subtle Cyan tint */
+.stars-medium {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 25vw 30vh #0dcaf0, 60vw 70vh #fff, 40vw 10vh #0dcaf0, 80vw 50vh #fff, 10vw 80vh #fff, 90vw 20vh #0dcaf0;
+    animation: spaceMove 100s linear infinite;
+    opacity: 0.6;
+}
+
+/* Layer 3: Occasional brighter "Crystal" stars */
+.stars-large {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 50vw 50vh #fff, 15vw 15vh #0dcaf0, 85vw 85vh #fff;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: spaceMove 80s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes spaceMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+/* Professionalism: Hide stars in Day Mode */
+body.light-mode .star-container {
+    display: none;
 }
 
 .underline {
