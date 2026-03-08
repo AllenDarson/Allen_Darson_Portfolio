@@ -165,8 +165,7 @@
 // export default Contact;
 import "../Css/Contact.css";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-// import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaWhatsapp, FaLinkedinIn, FaCopy } from 'react-icons/fa';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaWhatsapp, FaLinkedinIn, FaCopy } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaLinkedinIn, FaCopy } from 'react-icons/fa';
 import { FaGithub } from "react-icons/fa6";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -189,7 +188,6 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        // Logic to map form IDs (like formFirstName) to state keys (firstName)
         let key = id.replace('form', '');
         key = key.charAt(0).toLowerCase() + key.slice(1);
         setFormData({ ...formData, [key]: value });
@@ -209,11 +207,8 @@ const Contact = () => {
         });
     };
 
-    // --- SECURE MAIL SENDING LOGIC ---
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // 1. Validation: Ensure required fields are filled
         if (!formData.firstName || !formData.email || !formData.comments) {
             Swal.fire({
                 icon: 'warning',
@@ -225,21 +220,16 @@ const Contact = () => {
             return;
         }
 
-        // 2. Show "Sending..." Animation
         Swal.fire({
             title: 'Connecting to Allen...',
             text: 'Sending your message securely.',
             allowOutsideClick: false,
             background: '#1a1a1a',
             color: '#fff',
-            didOpen: () => {
-                Swal.showLoading();
-            }
+            didOpen: () => { Swal.showLoading(); }
         });
 
-        // 3. Prepare Web3Forms Payload
         const payload = {
-            // ↓↓↓ PASTE YOUR ACCESS KEY FROM WEB3FORMS HERE ↓↓↓
             access_key: "61d247b3-1ba3-4dd3-8f83-fd81c362c909", 
             name: `${formData.firstName} ${formData.lastName}`,
             email: formData.email,
@@ -252,34 +242,23 @@ const Contact = () => {
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
                 body: JSON.stringify(payload),
             });
-
             const result = await response.json();
-
             if (result.success) {
-                // 4. Success Feedback
                 Swal.fire({
                     icon: 'success',
                     title: 'Message Delivered!',
-                    text: 'Message successfully delivered. Thank you for your interest! Expect a response within 24–48 hours.',
+                    text: 'Thank you! Expect a response within 24–48 hours.',
                     timer: 5000,
                     background: '#1a1a1a',
                     color: '#fff',
                     showConfirmButton: false
                 });
-                
-                // Reset Form Fields
                 setFormData({ firstName: '', lastName: '', email: '', telephone: '', comments: '' });
-            } else {
-                throw new Error("Submission Failed");
-            }
+            } else { throw new Error(); }
         } catch (error) {
-            // 5. Error Feedback
             Swal.fire({
                 icon: 'error',
                 title: 'Oops!',
@@ -291,8 +270,14 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact-section" className="py-5">
-            <Container>
+        <section id="contact-section">
+            {/* STAR BACKGROUND */}
+            <div className="contact-star-container">
+                <div className="contact-stars stars-1"></div>
+                <div className="contact-stars stars-2"></div>
+            </div>
+
+            <Container className="contact-container-relative">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -301,17 +286,13 @@ const Contact = () => {
                 >
                     <h1 className="display-4 fw-bold contact-title">Connect With Me</h1>
                     <p className="contact-subtitle">I'm currently open to new opportunities and collaborations.</p>
-                    <div className="underline mx-auto mb-4"></div>
                 </motion.div>
 
                 <Row className="justify-content-center">
-                    {/* FORM SIDE */}
                     <Col lg={6} className="mb-4" data-aos="fade-up">
-                        <div className="p-4 glass-card contact-form-container">
+                        <div className="p-4 glass-card">
                             <Form onSubmit={handleSubmit}>
-                                {/* Anti-Bot Hidden Field */}
                                 <input type="checkbox" name="botcheck" style={{ display: "none" }} />
-
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className="mb-3" controlId="formFirstName">
@@ -349,9 +330,8 @@ const Contact = () => {
                         </div>
                     </Col>
 
-                    {/* INFO SIDE */}
                     <Col lg={4} data-aos="fade-up" data-aos-delay="200">
-                        <div className="p-4 glass-card contact-info-container">
+                        <div className="p-4 glass-card">
                             <div className="info-row" onClick={() => copyToClipboard("+918760961525", "Phone")}>
                                 <div className="info-icon"><FaPhone /></div>
                                 <div className="info-content">
@@ -374,10 +354,10 @@ const Contact = () => {
                                 </div>
                             </div>
                             <hr className="divider" />
-                            <h6 className="follow-text text-left">Social Profiles</h6>
+                            <h6 className="follow-text">Social Profiles</h6>
                             <div className="social-grid">
                                 <a href="https://wa.me/+918760961525" target="_blank" rel="noreferrer" className="social-btn"><FaWhatsapp /></a>
-                                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" className="social-btn"><FaLinkedinIn /></a>
+                                <a href="https://www.linkedin.com/in/allen-darson-c-53b6b4217" target="_blank" rel="noreferrer" className="social-btn"><FaLinkedinIn /></a>
                                 <a href="https://github.com/AllenDarson" target="_blank" rel="noreferrer" className="social-btn"><FaGithub /></a>
                             </div>
                         </div>
