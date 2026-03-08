@@ -12,7 +12,6 @@
     transition: background 0.4s ease;
 }
 
-/* Star Layers Container */
 .star-container {
     position: absolute;
     top: 0;
@@ -23,44 +22,57 @@
     z-index: 0;
 }
 
-/* Layer 1: Tiny distant stars (Very Slow) */
+/* Base layer for all star types */
+.stars-small, .stars-medium, .stars-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}
+
+/* Small Stars: Using a radial gradient tile for infinite looping */
 .stars-small {
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    /* Massive box-shadow for a full "visible" sky */
-    box-shadow: 10vw 20vh #fff, 35vw 45vh #fff, 70vw 15vh #fff, 85vw 80vh #fff, 20vw 90vh #fff, 50vw 10vh #fff, 95vw 55vh #fff, 40vw 30vh #fff, 15vw 60vh #fff, 55vw 85vh #fff, 80vw 25vh #fff, 45vw 5vh #fff, 5vw 35vh #fff, 65vw 50vh #fff, 25vw 75vh #fff, 90vw 10vh #fff;
-    animation: spaceMove 150s linear infinite;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 110px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 100px, #ddd, rgba(0,0,0,0));
+    background-size: 200px 200px; /* The "Tile" size */
+    animation: revolveSpace 100s linear infinite;
+    opacity: 0.5;
 }
 
-/* Layer 2: Medium stars with a subtle Cyan tint */
+/* Medium Stars: Slightly larger, moving faster */
 .stars-medium {
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: 25vw 30vh #0dcaf0, 60vw 70vh #fff, 40vw 10vh #0dcaf0, 80vw 50vh #fff, 10vw 80vh #fff, 90vw 20vh #0dcaf0;
-    animation: spaceMove 100s linear infinite;
-    opacity: 0.6;
-}
-
-/* Layer 3: Occasional brighter "Crystal" stars */
-.stars-large {
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: 50vw 50vh #fff, 15vw 15vh #0dcaf0, 85vw 85vh #fff;
-    border-radius: 50%;
-    filter: blur(1px);
-    animation: spaceMove 80s linear infinite;
+    background-image: 
+        radial-gradient(2px 2px at 100px 150px, #0dcaf0, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 300px 400px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 500px 100px, #0dcaf0, rgba(0,0,0,0));
+    background-size: 600px 600px;
+    animation: revolveSpace 60s linear infinite;
     opacity: 0.4;
 }
 
-@keyframes spaceMove {
-    from { transform: translateY(0); }
-    to { transform: translateY(-1000px); }
+/* Large Glowy Stars: Moving the fastest for parallax depth */
+.stars-large {
+    background-image: 
+        radial-gradient(3px 3px at 50% 50%, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 10% 90%, #0dcaf0, rgba(0,0,0,0));
+    background-size: 800px 800px;
+    animation: revolveSpace 40s linear infinite;
+    opacity: 0.3;
 }
 
-/* Professionalism: Hide stars in Day Mode */
+@keyframes revolveSpace {
+    from { background-position: 0 0; }
+    to { background-position: 0 -1000px; } /* Must match the background-size logic for smoothness */
+}
+
+/* Hide for Day Mode */
 body.light-mode .star-container {
     display: none;
 }
