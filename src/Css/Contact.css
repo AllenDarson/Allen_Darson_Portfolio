@@ -38,6 +38,7 @@ body.light-mode .contact-stars {
                       radial-gradient(1px 1px at 50px 100px, #ddd, transparent);
     background-size: 250px 250px;
     animation: revolveContact 150s linear infinite;
+    will-change: background-position;
 }
 
 .stars-2 {
@@ -45,6 +46,7 @@ body.light-mode .contact-stars {
     background-size: 500px 500px;
     animation: revolveContact 100s linear infinite;
     opacity: 0.3;
+    will-change: background-position;
 }
 
 @keyframes revolveContact {
