@@ -84,7 +84,7 @@ const Home = () => {
             </button>
 
             {/* Toggler Button */}
-            <button
+            {/* <button
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -94,7 +94,7 @@ const Home = () => {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
           </div>
 
           {/* Nav Links */}
