@@ -66,7 +66,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-5">
-      {/* DEEP SPACE BACKGROUND LAYERS */}
+      {/* SEAMLESS INFINITE STAR LAYERS */}
       <div className="star-container">
         <div className="stars-small"></div>
         <div className="stars-medium"></div>
@@ -74,7 +74,6 @@ const Skills = () => {
       </div>
 
       <Container style={{ position: 'relative', zIndex: 3 }}>
-        {/* ANIMATED HEADING */}
         <div style={{ overflow: 'hidden', padding: '10px 0' }}>
           <motion.h1
             className="text-center fw-bold display-5"
