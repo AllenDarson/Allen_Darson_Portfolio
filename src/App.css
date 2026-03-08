@@ -563,37 +563,82 @@ body.light-mode {
   color: #212529; /* Dark icon */
 
 }
+
+
+
 /*hamburger section */
-body.light-mode .navbar-toggler {
-  border: none; /* remove the border outline */
-}
-
-body.light-mode .navbar-toggler-icon {
-  background-image: none; /* remove bootstrap default */
-  width: 24px;
-  height: 2px;
-  background-color: #212529; /* dark bar */
-  display: block;
+/* Base Toggle Container */
+.toggle {
   position: relative;
+  width: 35px; /* Adjusted slightly for navbar scale */
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition-duration: .5s;
 }
 
-body.light-mode .navbar-toggler-icon::before,
-body.light-mode .navbar-toggler-icon::after {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background-color: #212529;
+.bars {
+  width: 100%;
+  height: 3px;
+  border-radius: 4px;
+  transition-duration: .5s;
+}
+
+/* Color Logic */
+/* Night Mode (Default/Dark) */
+.bars {
+  background-color: rgb(10, 86, 101);
+}
+
+/* Day Mode (Light) */
+body.light-mode .bars {
+  background-color: #3385fd;
+}
+
+/* Animation Logic */
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1, #bar3 {
+  width: 70%;
+}
+
+/* When Bootstrap expands the menu or checkbox is toggled */
+#checkbox:checked + .toggle .bars,
+.navbar-toggler[aria-expanded="true"] .bars {
   position: absolute;
-  left: 0;
+  transition-duration: .5s;
 }
 
-body.light-mode .navbar-toggler-icon::before {
-  top: -7px;
+#checkbox:checked + .toggle #bar2,
+.navbar-toggler[aria-expanded="true"] #bar2 {
+  transform: scaleX(0);
 }
 
-body.light-mode .navbar-toggler-icon::after {
-  top: 7px;
+#checkbox:checked + .toggle #bar1,
+.navbar-toggler[aria-expanded="true"] #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
 }
+
+#checkbox:checked + .toggle #bar3,
+.navbar-toggler[aria-expanded="true"] #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+#checkbox:checked + .toggle,
+.navbar-toggler[aria-expanded="true"] .toggle {
+  transform: rotate(180deg);
+}
+
+
+
 /* Hero Section */
 body.light-mode .hero-section {
   background-color: #f8f9fa;
