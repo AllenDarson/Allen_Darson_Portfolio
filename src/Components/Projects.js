@@ -36,59 +36,59 @@ const Projects = () => {
 
   // Data array to make the code cleaner
   const projectData = [
-     {
+    {
       title: "Google Task-Style To-Do Web App",
       img: "/to_do_task.png",
       desc: "This is a simple and responsive task management app built using React JS. The interface closely resembles Google Tasks, allowing users to add, edit, delete, and star their daily tasks in an intuitive way.",
       github: "https://github.com/AllenDarson/To-do-list-Task",
-      live:"https://allendarson.github.io/To-do-list-Task/"
+      live: "https://allendarson.github.io/To-do-list-Task/"
     },
-    
-     {
+
+    {
       title: "KickEdge – Retro Football Jersey Landing Page",
       img: "/Football_landing_page.png",
       desc: "A modern, responsive landing page built using React + Vite, featuring a clean UI, product sections, and smooth animations. This project is designed as a showcase landing page for a football jersey brand called KickEdge.",
       github: "https://github.com/AllenDarson/football_jersey_landing_page",
-      live:"https://football-jersey-landing-page.onrender.com"
+      live: "https://football-jersey-landing-page.onrender.com"
     },
-     {
+    {
       title: "Personal Portfolio",
       img: "/portfolio.png",
       desc: "A clean portfolio built with React.js, CSS and React Bootstrap to showcase my work and skills.",
       github: "https://github.com/AllenDarson/Portfolio",
-      live:"https://allen-darson-portfolio.onrender.com"
+      live: "https://allen-darson-portfolio.onrender.com"
     },
     {
       title: "Powerhouse Fitness (E-commerce)",
       img: "/gym_kart.png",
       desc: "Engineered a secure, full-stack e-commerce solution (Django/SQL) for gym products, featuring role-based access control and CRUD management.",
       github: "https://github.com/AllenDarson/ecommerce_django",
-      live:"https://github.com/AllenDarson/ecommerce_django"
+      live: "https://github.com/AllenDarson/ecommerce_django"
     },
-    
+
     {
       title: "Salary Management System (IBM)",
       img: "/Sql.jpg",
       desc: "SQL-based salary system with CRUD operations, payroll analytics, and department-wise data handling.",
       github: "https://github.com/AllenDarson/SQL-Salary-Management-System-",
-      live:"https://github.com/AllenDarson/SQL-Salary-Management-System-"
+      live: "https://github.com/AllenDarson/SQL-Salary-Management-System-"
     },
-   
-   
+
+
   ];
 
   return (
     <section id="projects" className="py-5 projects-section">
       <div className="container">
         <div className="about-wrapper">
-          <div style={{ overflow: 'hidden', padding: '15px 0' }}> 
-            <motion.h2 
+          <div style={{ overflow: 'hidden', padding: '15px 0' }}>
+            <motion.h2
               className="projects-section-title fw-bold display-4 text-center"
               variants={containerVars}
               initial="initial"
               whileInView="animate"
               viewport={{ once: false, amount: 0.4 }}
-              style={{ display: 'flex', justifyContent: 'center', color: 'rgb(13, 202, 240)',margin: 0,whiteSpace: 'nowrap' }}
+              style={{ display: 'flex', justifyContent: 'center', color: 'rgb(13, 202, 240)', margin: 0, whiteSpace: 'nowrap' }}
             >
               {text.split("").map((char, index) => (
                 <motion.span key={index} variants={letterVars} style={{ display: 'inline-block' }}>
@@ -132,7 +132,7 @@ const Projects = () => {
                     <div className="card-body d-flex flex-column">
                       <h4 className="card-title">{item.title}</h4>
                       <p className="card-text">{item.desc}</p>
-                      
+
                       <div className="text-center mt-auto custom-button-group">
                         <a href={item.github} target="_blank" rel="noopener noreferrer" className="animated-button github-btn">
                           <div className="svg-wrapper-1">
@@ -167,28 +167,24 @@ const Projects = () => {
           </div>
           {/* --- CAROUSEL END --- */}
 
-          {/* <div className="text-center mt-5">
-            <a href="https://github.com/AllenDarson/Allen_Darson_Portfolio" className="btn githubs-btn" target="_blank" rel="noreferrer">
-              <span className="btn-text">🔍 View More Projects on GitHub</span>
-            </a>
-          </div> */}
+          
 
           <div className="text-center mt-5">
-  <a 
-    href="https://github.com/AllenDarson/Allen_Darson_Portfolio" 
-    className="githubs-btn" 
-    target="_blank" 
-    rel="noreferrer"
-  >
-    <span className="shimmer"></span>
-    <span className="liquid"></span>
-    <span className="btn-content">
-      <span className="icon-float">🔍</span>
-      <span className="btn-text">Explore My Full Lab on GitHub</span>
-    </span>
-  </a>
-</div>
-          
+            <a
+              href="https://github.com/AllenDarson/Allen_Darson_Portfolio"
+              className="githubs-btn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="shimmer"></span>
+              <span className="liquid"></span>
+              <span className="btn-content">
+                <span className="icon-float">🔍</span>
+                <span className="btn-text">Explore My Full Lab on GitHub</span>
+              </span>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
