@@ -71,8 +71,8 @@
 }
 
 @keyframes revolveSpace {
-    from { background-position: 0 0; }
-    to { background-position: 0 -1000px; } /* Must match the background-size logic for smoothness */
+    from { transform: translateY(0); }
+    to { transform: translateY(-150px); } /* Must match the background-size logic for smoothness */
 }
 
 /* Hide for Day Mode */

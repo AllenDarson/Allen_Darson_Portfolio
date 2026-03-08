@@ -27,8 +27,8 @@
 }
 
 @keyframes footerStars {
-  from { background-position: 0 0; }
-  to { background-position: 400px 400px; }
+ from { transform: translateY(0); }
+    to { transform: translateY(-150px); }
 }
 
 .footer-content-relative {

@@ -8,7 +8,10 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 1200 });
+    AOS.init({ duration: 1000,
+    once: true,         // Only animate once to stop recalculating hidden elements
+    disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
+    useClassNames: true });
   }, []);
 
   const text = "About Me";

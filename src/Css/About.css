@@ -70,8 +70,8 @@
 }
 
 @keyframes revolveSpaceAbout {
-  from { background-position: 0 0; }
-  to { background-position: 0 -1000px; }
+  from { transform: translateY(0); }
+    to { transform: translateY(-150px); }
 }
 
 /* Day Mode Hide Stars */

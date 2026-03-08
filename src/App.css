@@ -56,6 +56,7 @@ body {
   background: linear-gradient(135deg, #282c34, #0d1b2a, #1e3a5f);
   color: white;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
 }
 /* ------------------------------------------------ NAVBAR --------------------------------------------------*/
 
@@ -322,6 +323,10 @@ body {
   position: relative;
   z-index: 1;
   /* (Keep your existing Jelly/Crystal card styles here) */
+  will-change: transform, opacity;
+    /* This prevents the "flicker" during fast scrolls */
+    transform: translateZ(0); 
+    -webkit-font-smoothing: antialiased;
 }
 
 
