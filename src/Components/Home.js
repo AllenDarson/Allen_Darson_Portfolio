@@ -95,6 +95,27 @@ const Home = () => {
             >
               <span className="navbar-toggler-icon"></span>
             </button> */}
+            <button
+              className="navbar-toggler p-0 border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={(e) => {
+                // This ensures the hidden checkbox toggles when the button is clicked
+                const cb = e.currentTarget.querySelector('#checkbox');
+                if (cb) cb.checked = !cb.checked;
+              }}
+            >
+              <input type="checkbox" id="checkbox" className="d-none" />
+              <label htmlFor="checkbox" className="toggle mb-0">
+                <div className="bars" id="bar1"></div>
+                <div className="bars" id="bar2"></div>
+                <div className="bars" id="bar3"></div>
+              </label>
+            </button>
           </div>
 
           {/* Nav Links */}
