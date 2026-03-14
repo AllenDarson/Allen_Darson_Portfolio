@@ -8,10 +8,12 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000,
-    once: true,         // Only animate once to stop recalculating hidden elements
-    disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
-    useClassNames: true });
+    AOS.init({ 
+      duration: 1000,
+      once: true,         
+      disable: 'mobile',   
+      useClassNames: true 
+    });
   }, []);
 
   const text = "About Me";
@@ -42,12 +44,7 @@ const About = () => {
 
   return (
     <section id="about" className="about-section">
-      {/* SEAMLESS INFINITE STAR LAYERS */}
-      <div className="star-container">
-        <div className="stars-small"></div>
-        <div className="stars-medium"></div>
-        <div className="stars-large"></div>
-      </div>
+      {/* STAR CONTAINER REMOVED FROM HERE */}
 
       <div className="container" style={{ position: 'relative', zIndex: 3 }}>
         <div className="about-wrapper">
@@ -192,10 +189,10 @@ const About = () => {
                 </div>
               </div>
 
-            </div> {/* End Timeline */}
-          </div> {/* End Timeline Container */}
-        </div> {/* End About Wrapper */}
-      </div> {/* End Container */}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
