@@ -8,11 +8,11 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ 
+    AOS.init({
       duration: 1000,
-      once: true,         
-      disable: 'mobile',   
-      useClassNames: true 
+      once: true,
+      disable: 'mobile',
+      useClassNames: true
     });
   }, []);
 
@@ -75,7 +75,7 @@ const About = () => {
               ))}
             </motion.h2>
           </div>
-          
+
           <div className="text-center mb-5">
             <div className="section-divider"></div>
           </div>
@@ -112,7 +112,24 @@ const About = () => {
           <div className="timeline-container mt-5">
             <h2 className="text-center mb-5">🎓 Education & Experience</h2>
             <div className="timeline">
-              
+
+              {/* Junior Developer*/}
+              <div className="timeline-item right" data-aos="fade-left">
+                <div className="timeline-icon">
+                  <img src="/logo3portfolio.jpg" alt="logo" />
+                </div>
+                <div className="timeline-card">
+                  <h5>Junior Developer</h5>
+                  <p className="text-muted">Acculer Media Technology India Pvt Ltd</p>
+                  <small className="fw-bold">05th January 2026 - Present</small>
+                  <p className="mt-2">
+                    Transitioned into a full-time role, focusing on building scalable web applications, 
+      optimizing frontend performance, and managing end-to-end deployments.
+                  </p>
+                </div>
+              </div>
+
+
               {/* Internship */}
               <div className="timeline-item left" data-aos="fade-right">
                 <div className="timeline-icons">
