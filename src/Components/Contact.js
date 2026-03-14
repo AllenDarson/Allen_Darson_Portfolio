@@ -175,10 +175,12 @@ import Swal from 'sweetalert2';
 
 const Contact = () => {
     useEffect(() => {
-        AOS.init({ duration: 1000,
-    once: true,         // Only animate once to stop recalculating hidden elements
-    disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
-    useClassNames: true });
+        AOS.init({ 
+            duration: 1000,
+            once: true,         
+            disable: 'mobile',   
+            useClassNames: true 
+        });
     }, []);
 
     const [formData, setFormData] = useState({
@@ -274,11 +276,7 @@ const Contact = () => {
 
     return (
         <section id="contact-section">
-            {/* STAR BACKGROUND */}
-            <div className="contact-star-container">
-                <div className="contact-stars stars-1"></div>
-                <div className="contact-stars stars-2"></div>
-            </div>
+            {/* STAR BACKGROUND REMOVED FROM HERE */}
 
             <Container className="contact-container-relative">
                 <motion.div
