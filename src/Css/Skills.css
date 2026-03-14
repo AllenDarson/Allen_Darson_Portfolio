@@ -1,84 +1,10 @@
-/* #skills {
-    padding: 100px 0;
-    background-color: #000000;
-    transition: background 0.4s ease;
-} */
- /* --- PROFESSIONAL PARALLAX DEEP SPACE --- */
 #skills {
     padding: 100px 0;
     background-color: #000000;
-    position: relative;
-    overflow: hidden;
     transition: background 0.4s ease;
 }
+ /* --- PROFESSIONAL PARALLAX DEEP SPACE --- */
 
-.star-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Base layer for all star types */
-.stars-small, .stars-medium, .stars-large {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: repeat;
-}
-
-/* Small Stars: Using a radial gradient tile for infinite looping */
-.stars-small {
-    background-image: 
-        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 110px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 150px 100px, #ddd, rgba(0,0,0,0));
-    background-size: 200px 200px; /* The "Tile" size */
-    animation: revolveSpace 100s linear infinite;
-    will-change: background-position;
-    opacity: 0.5;
-}
-
-/* Medium Stars: Slightly larger, moving faster */
-.stars-medium {
-    background-image: 
-        radial-gradient(2px 2px at 100px 150px, #0dcaf0, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 300px 400px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 500px 100px, #0dcaf0, rgba(0,0,0,0));
-    background-size: 600px 600px;
-    animation: revolveSpace 60s linear infinite;
-    will-change: background-position;
-    opacity: 0.4;
-}
-
-/* Large Glowy Stars: Moving the fastest for parallax depth */
-.stars-large {
-    background-image: 
-        radial-gradient(3px 3px at 50% 50%, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 10% 90%, #0dcaf0, rgba(0,0,0,0));
-    background-size: 800px 800px;
-    animation: revolveSpace 40s linear infinite;
-    will-change: background-position;
-    opacity: 0.3;
-}
-
-@keyframes revolveSpace {
-    from { transform: translateY(0); }
-    to { transform: translateY(-150px); } /* Must match the background-size logic for smoothness */
-}
-
-/* Hide for Day Mode */
-body.light-mode .star-container {
-    display: none;
-}
 
 .underline {
     width: 60px;

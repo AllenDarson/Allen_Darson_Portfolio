@@ -15,10 +15,12 @@ import "../Css/Skills.css";
 
 const Skills = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000,
-    once: true,         // Only animate once to stop recalculating hidden elements
-    disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
-    useClassNames: true });
+    AOS.init({ 
+      duration: 1000,
+      once: true,         // Only animate once to stop recalculating hidden elements
+      disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
+      useClassNames: true 
+    });
   }, []);
 
   const text = "Skills & Technologies";
@@ -69,12 +71,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-5">
-      {/* SEAMLESS INFINITE STAR LAYERS */}
-      <div className="star-container">
-        <div className="stars-small"></div>
-        <div className="stars-medium"></div>
-        <div className="stars-large"></div>
-      </div>
+      {/* STAR CONTAINER REMOVED FROM HERE */}
 
       <Container style={{ position: 'relative', zIndex: 3 }}>
         <div style={{ overflow: 'hidden', padding: '10px 0' }}>
