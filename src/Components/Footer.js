@@ -6,8 +6,7 @@ import "../Css/Footer.css";
 export default function Footer() {
   return (
     <footer className="footer-section">
-      {/* BACKGROUND STARS */}
-      <div className="footer-star-layer"></div>
+      {/* BACKGROUND STARS REMOVED FROM HERE */}
 
       <div className="container footer-content-relative">
         <div className="footer-content py-5">
