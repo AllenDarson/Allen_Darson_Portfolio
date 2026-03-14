@@ -22,10 +22,12 @@ const Home = () => {
   }, [darkMode]);
 
   useEffect(() => {
-    AOS.init({ duration: 1000,
-    once: true,         // Only animate once to stop recalculating hidden elements
-    disable: 'mobile',   // Disabling on mobile often solves the "fluctuation" issue
-    useClassNames: true });
+    AOS.init({ 
+      duration: 1000,
+      once: true,         
+      disable: 'mobile',   
+      useClassNames: true 
+    });
   }, []);
 
   const [index, setIndex] = useState(0);
@@ -40,7 +42,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Navbar (Kept your existing code) */}
+      {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
         <div className="container d-flex align-items-center justify-content-between">
           <a className="navbar-brand fw-bold fs-4" href="#home">Allen Darson C</a>
@@ -74,9 +76,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="hero-section" id="home">
-        {/* BACKGROUND STARS */}
-        <div className="hero-star-layer h-stars-1"></div>
-        <div className="hero-star-layer h-stars-2"></div>
+        {/* HERO STAR LAYERS REMOVED FROM HERE */}
 
         <div className="container">
           <div className="hero-card row g-4 align-items-center" data-aos="zoom-in">
