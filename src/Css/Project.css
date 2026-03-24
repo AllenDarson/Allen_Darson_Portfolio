@@ -362,7 +362,7 @@
 /* Day Mode Override - White Body Background */
 body.light-mode {
   --main-color: #0d6efd;           /* Blue */
-  --final-text-color: #fff;         /* White text on Blue swipe */
+  --final-text-color:#fafafa;         /* White text on Blue swipe */
   --text-transition-delay: 1s;
 }
 
@@ -432,23 +432,23 @@ body.light-mode .github-btn {
 
 body.light-mode .demo-btn {
     background: #0d6efd; 
-    color: white;
-    fill: white;
+    color: #fafafa;
+    fill: #fafafa;
 }
 
 body.light-mode .github-btn:hover {
     background: #0aacee; 
-    color: #fff !important;
-    fill: #fff;
+    color: #fafafa !important;
+    fill: #fafafa;
 }
 
 body.light-mode .demo-btn:hover {
     background: #0b5ed7; 
-    color: #fff !important;
-    fill: #fff;
+    color: #fafafa!important;
+    fill: #fafafa;
 }
 body.light-mode .animated-button:hover .icon {
-    fill: #fff;
+    fill: #fafafa;
 }
 
 body.light-mode .github-btn {
@@ -459,8 +459,8 @@ body.light-mode .github-btn {
 
 body.light-mode .demo-btn {
     background: #0d6efd; 
-    color: white;
-    fill: white;
+    color: #fafafa;
+    fill: #fafafa;
 }
 
 
@@ -488,7 +488,7 @@ body.light-mode .githubs-btn {
 }
 
 body.light-mode .githubs-btn:hover {
-  color: #fff !important; /* Text turns white when liquid fills up */
+  color: #fafafa !important; /* Text turns white when liquid fills up */
   border-color: #0aacee;
   box-shadow: 
     0 15px 30px rgba(10, 172, 238, 0.3),
@@ -512,11 +512,11 @@ body.light-mode .githubs-btn .shimmer {
 
 body.light-mode .demo-btn:hover {
     background: #0b5ed7; 
-    color: #fff !important;
-    fill: #fff;
+    color: #fafafa !important;
+    fill: #fafafa;
 }
 body.light-mode .animated-button:hover .icon {
-    fill: #fff;
+    fill: #fafafa;
 }
 /* --- Light Mode Adaptations --- */
 
@@ -529,29 +529,29 @@ body.light-mode .github-btn {
 
 body.light-mode .demo-btn {
     background: #0d6efd; /* Use the Primary Blue for the second button */
-    color: white;
-    fill: white;
+    color: #fafafa;
+    fill: #fafafa;
 }
 
 body.light-mode .github-btn:hover {
     background: #0aacee; /* Darker Cyan */
-    color: #fff !important;
-    fill: #fff;
+    color: #fafafa !important;
+    fill: #fafafa;
 }
 
 body.light-mode .demo-btn:hover {
     background: #0b5ed7; /* Darker Blue */
-    color: #fff !important;
-    fill: #fff;
+    color: #fafafa!important;
+    fill: #fafafa;
 }
 /* Ensure the icon fill on hover for ALL light mode buttons is white */
 body.light-mode .animated-button:hover .icon {
-    fill: #fff;
+    fill: #fafafa;
 }
 /*****************************************************************************************************************/
 /*  Light Mode Projects Section */
 body.light-mode .projects-section {
-  background-color: #f8f9fa;
+  background-color: #fafafa;
   color: #212529;
 }
 
@@ -560,7 +560,7 @@ body.light-mode .projects-section-title {
 }
 
 body.light-mode .project-card {
-  background-color: #ffffff;
+  background-color: #fafafa;
   color: #212529;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
@@ -572,7 +572,7 @@ body.light-mode .project-card:hover {
 }
 
 body.light-mode .project-card .card-body {
-  background-color: #ffffff;
+  background-color: #fafafa;
   color: #212529;
 }
 
