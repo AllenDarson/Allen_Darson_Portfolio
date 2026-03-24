@@ -71,8 +71,8 @@
 
 /* --- LIGHT MODE --- */
 body.light-mode .footer-section {
-  background-color: #f8f9fa;
-  border-top: 1px solid #eee;
+  background-color: #fafafa;
+  border-top: 1px solid #fafafa;
   color: #212529;
 }
 
@@ -80,8 +80,8 @@ body.light-mode .footer-tagline { color: #6c757d; }
 body.light-mode .footer-name { color: #000; }
 
 body.light-mode .footer-icon-btn {
-  background: #fff;
-  border-color: #ddd;
+  background: #fafafa;
+  border-color: #fafafa;
   color: #212529 !important;
   box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
